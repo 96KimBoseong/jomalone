@@ -67,23 +67,38 @@ body {
   position: relative;
 }
 .banner {
-  position: absolute;
+  position: fixed;
   @include size(100%, 30px);
   background-color: #000;
-  //   overflow: hidden;
+  top: 0;
+  left: 0;
+  padding-top: 5px;
   display: flex;
+  overflow: hidden;
   p {
+    //text-align: center;
     width: 100%;
     color: #fff;
-    // animation: rolling 30s infinite both;
-    @include size(100%, 30px);
+    //animation: rolling 60s infinite both;
+  }
+  .close {
+    display: block;
+    @include size(30px, 30px);
+    position: absolute;
+    top: 0;
+    right: -25%;
+    color: #fff;
   }
 }
+
 @keyframes rolling {
   0% {
-    transform: translateX(100%);
+    transform: translateX(500%);
+  }
+  50% {
+    transform: translateX(-250%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-500%);
   }
 }
