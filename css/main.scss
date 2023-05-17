@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+img {
+  display: block;
+  width: 100%;
+}
+// font
+@font-face {
+  font-family: "KOTRA_GOTHIC";
+  src: url(../font/KOTRA_BOLD_.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bookk Myungjo";
+  src: url(../font/부크크명조_굵은글씨.woff);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bookk Myungjo";
+  src: url(../font/부크크명조_얇은글씨.woff);
+  font-weight: 400;
+  font-style: normal;
+}
+
+// mixin
+$main: #fcf9ee;
+$sub: #000;
+$border: (0.3px solid #000);
+@mixin ko {
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin en {
+  font-family: "Bookk Myungjo";
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin en_b {
+  font-family: "Bookk Myungjo";
+  font-weight: 700;
+  font-style: bold;
+}
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin text($height) {
+  text-align: center;
+  line-height: $height;
+}
+
+body {
+  background-color: $main;
+  position: relative;
+}
+.banner {
+  position: absolute;
+  @include size(100%, 30px);
+  background-color: #000;
+  //   overflow: hidden;
+  display: flex;
+  p {
+    width: 100%;
+    color: #fff;
+    // animation: rolling 30s infinite both;
+    @include size(100%, 30px);
+  }
+}
+@keyframes rolling {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
