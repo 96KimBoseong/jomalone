@@ -66,9 +66,10 @@ body {
   background-color: $main;
   position: relative;
 }
+///body
+
 .banner {
-  position: fixed;
-  @include size(100%, 30px);
+  @include size(500%, 30px);
   background-color: #000;
   top: 0;
   left: 0;
@@ -76,10 +77,9 @@ body {
   display: flex;
   overflow: hidden;
   p {
-    //text-align: center;
     width: 100%;
     color: #fff;
-    //animation: rolling 60s infinite both;
+    //animation: rolling 45s infinite both;
   }
   .close {
     display: block;
@@ -93,12 +93,48 @@ body {
 
 @keyframes rolling {
   0% {
-    transform: translateX(500%);
+    transform: translateX(100%);
   }
-  50% {
-    transform: translateX(-250%);
-  }
+
   100% {
     transform: translateX(-500%);
+  }
+}
+///rolling banner
+
+//visual_main
+.visual {
+  @include size(100vw, 100vh);
+}
+.visual_inner {
+  @include size(100vw, 100vh);
+}
+.visual_inner video {
+  background-size: contain;
+  height: 100%;
+}
+//bg
+//header
+.header {
+  @include size(1300px, 50px);
+  @include en();
+  display: flex;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  .logo {
+  }
+  .menu {
+    ul {
+      display: flex;
+    }
+  }
+  .gnb {
+    display: flex;
+    ul {
+      display: flex;
+    }
+    img {
+      @include size(30px, 30px);
+    }
   }
 }

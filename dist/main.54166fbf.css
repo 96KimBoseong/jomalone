@@ -43,8 +43,7 @@ body {
 }
 
 .banner {
-  position: fixed;
-  width: 100%;
+  width: 500%;
   height: 30px;
   background-color: #000;
   top: 0;
@@ -69,14 +68,49 @@ body {
 
 @keyframes rolling {
   0% {
-    transform: translateX(500%);
-  }
-  50% {
-    transform: translateX(-250%);
+    transform: translateX(100%);
   }
   100% {
     transform: translateX(-500%);
   }
+}
+.visual {
+  width: 100vw;
+  height: 100vh;
+}
+
+.visual_inner {
+  width: 100vw;
+  height: 100vh;
+}
+
+.visual_inner video {
+  background-size: contain;
+  height: 100%;
+}
+
+.header {
+  width: 1300px;
+  height: 50px;
+  font-family: "Bookk Myungjo";
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+.header .menu ul {
+  display: flex;
+}
+.header .gnb {
+  display: flex;
+}
+.header .gnb ul {
+  display: flex;
+}
+.header .gnb img {
+  width: 30px;
+  height: 30px;
 }
 
 /*# sourceMappingURL=/main.54166fbf.css.map */
