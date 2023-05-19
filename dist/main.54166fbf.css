@@ -77,16 +77,13 @@ body {
 .visual {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
-
-.visual_inner {
-  width: 100vw;
-  height: 100vh;
-}
-
-.visual_inner video {
-  background-size: contain;
-  height: 100%;
+.visual video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 
 .header {
@@ -98,6 +95,9 @@ body {
   display: flex;
   border: 1px solid #fff;
   box-sizing: border-box;
+  margin: 0 auto;
+  border-right: none;
+  border-left: none;
 }
 .header .menu ul {
   display: flex;

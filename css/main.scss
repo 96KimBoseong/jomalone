@@ -105,14 +105,15 @@ body {
 //visual_main
 .visual {
   @include size(100vw, 100vh);
+  position: relative;
+  video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
 }
-.visual_inner {
-  @include size(100vw, 100vh);
-}
-.visual_inner video {
-  background-size: contain;
-  height: 100%;
-}
+
 //bg
 //header
 .header {
@@ -121,6 +122,9 @@ body {
   display: flex;
   border: 1px solid #fff;
   box-sizing: border-box;
+  margin: 0 auto;
+  border-right: none;
+  border-left: none;
   .logo {
   }
   .menu {
