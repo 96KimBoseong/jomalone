@@ -65,21 +65,20 @@ $border: (0.3px solid #000);
 body {
   background-color: $main;
   position: relative;
+  @include size(100%, 100%);
 }
 ///body
 
 .banner {
-  @include size(500%, 30px);
+  @include size(100%, 40px);
   background-color: #000;
-  top: 0;
-  left: 0;
-  padding-top: 5px;
   display: flex;
   overflow: hidden;
   p {
     width: 100%;
     color: #fff;
     //animation: rolling 45s infinite both;
+    line-height: 40px;
   }
   .close {
     display: block;
@@ -104,9 +103,11 @@ body {
 
 //visual_main
 .visual {
-  @include size(100vw, 100vh);
+  @include size(100%, 100vh);
   position: relative;
+  margin-bottom: 100px;
   video {
+    @include size(100%, auto);
     position: absolute;
     left: 0;
     top: 0;
@@ -116,29 +117,97 @@ body {
 
 //bg
 //header
-.header {
-  @include size(1300px, 50px);
-  @include en();
-  display: flex;
+.header_outer {
   border: 1px solid #fff;
-  box-sizing: border-box;
-  margin: 0 auto;
   border-right: none;
   border-left: none;
+  box-sizing: border-box;
+}
+.header {
+  @include size(1300px, 80px);
+  @include en();
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  color: #fff;
   .logo {
+    @include size(200px, auto);
+    padding-top: 10px;
+    margin-left: 45px;
+    p {
+      color: #fff;
+      text-align: center;
+      font-size: 30px;
+      letter-spacing: 5px;
+    }
+    p:last-child {
+      font-size: 12px;
+      letter-spacing: 5px;
+    }
   }
   .menu {
+    margin-left: 45px;
+    @include size(570px, 100%);
     ul {
+      @include size(100%, 100%);
       display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      li {
+        margin-right: 80px;
+        cursor: pointer;
+      }
     }
   }
   .gnb {
     display: flex;
+    margin-right: 45px;
+
     ul {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 140px;
+      li {
+        @include size(30px, 30px);
+        cursor: pointer;
+        img {
+          @include size(100%, 100%);
+        }
+      }
+      li:first-child img {
+        width: 80%;
+        height: 80%;
+        padding-top: 4px;
+        padding-left: 4px;
+      }
+      li:last-child {
+        margin-right: 0;
+        img {
+          /*!! 
+           width: 120%;
+          height: 120%; */
+        }
+      }
     }
-    img {
-      @include size(30px, 30px);
+  }
+}
+//header
+
+//new
+.new {
+  @include size(1300px, 500px);
+  display: flex;
+  margin: 0 auto;
+  .new_box {
+    width: 50%;
+  }
+  .new_box01 {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      @include size(100%, 100%);
     }
   }
 }

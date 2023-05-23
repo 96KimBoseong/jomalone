@@ -40,21 +40,21 @@ img {
 body {
   background-color: #fcf9ee;
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .banner {
-  width: 500%;
-  height: 30px;
+  width: 100%;
+  height: 40px;
   background-color: #000;
-  top: 0;
-  left: 0;
-  padding-top: 5px;
   display: flex;
   overflow: hidden;
 }
 .banner p {
   width: 100%;
   color: #fff;
+  line-height: 40px;
 }
 .banner .close {
   display: block;
@@ -75,42 +75,121 @@ body {
   }
 }
 .visual {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
+  margin-bottom: 100px;
 }
 .visual video {
+  width: 100%;
+  height: auto;
   position: absolute;
   left: 0;
   top: 0;
   z-index: -1;
 }
 
+.header_outer {
+  border: 1px solid #fff;
+  border-right: none;
+  border-left: none;
+  box-sizing: border-box;
+}
+
 .header {
   width: 1300px;
-  height: 50px;
+  height: 80px;
   font-family: "Bookk Myungjo";
   font-weight: 400;
   font-style: normal;
   display: flex;
-  border: 1px solid #fff;
-  box-sizing: border-box;
   margin: 0 auto;
-  border-right: none;
-  border-left: none;
+  justify-content: space-between;
+  color: #fff;
+}
+.header .logo {
+  width: 200px;
+  height: auto;
+  padding-top: 10px;
+  margin-left: 45px;
+}
+.header .logo p {
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+.header .logo p:last-child {
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+.header .menu {
+  margin-left: 45px;
+  width: 570px;
+  height: 100%;
 }
 .header .menu ul {
+  width: 100%;
+  height: 100%;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header .menu ul li {
+  margin-right: 80px;
+  cursor: pointer;
 }
 .header .gnb {
   display: flex;
+  margin-right: 45px;
 }
 .header .gnb ul {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 140px;
 }
-.header .gnb img {
+.header .gnb ul li {
   width: 30px;
   height: 30px;
+  cursor: pointer;
+}
+.header .gnb ul li img {
+  width: 100%;
+  height: 100%;
+}
+.header .gnb ul li:first-child img {
+  width: 80%;
+  height: 80%;
+  padding-top: 4px;
+  padding-left: 4px;
+}
+.header .gnb ul li:last-child {
+  margin-right: 0;
+}
+.header .gnb ul li:last-child img {
+  /*!! 
+   width: 120%;
+  height: 120%; */
+}
+
+.new {
+  width: 1300px;
+  height: 500px;
+  display: flex;
+  margin: 0 auto;
+}
+.new .new_box {
+  width: 50%;
+}
+.new .new_box01 {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.new .new_box01 div {
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=/main.54166fbf.css.map */
