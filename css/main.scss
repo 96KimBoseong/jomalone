@@ -68,7 +68,9 @@ body {
   @include size(100%, 100%);
 }
 ///body
-
+h3 {
+  @include en();
+} //title en
 .banner {
   @include size(100%, 40px);
   background-color: #000;
@@ -105,7 +107,7 @@ body {
 .visual {
   @include size(100%, 100vh);
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   video {
     @include size(100%, auto);
     position: absolute;
@@ -196,18 +198,42 @@ body {
 
 //new
 .new {
-  @include size(1300px, 500px);
-  display: flex;
+  @include size(1300px, 600px);
   margin: 0 auto;
-  .new_box {
-    width: 50%;
+  margin-bottom: 200px;
+  h3 {
+    margin-bottom: 10px;
+    margin-left: 10px;
   }
-  .new_box01 {
-    overflow: hidden;
+  .new_inner {
     display: flex;
-    flex-wrap: wrap;
-    div {
-      @include size(100%, 100%);
+    .swiper {
+      @include size(50%, 80%);
     }
+    .right_box {
+      width: 50%;
+    }
+  }
+}
+//new
+
+//collection
+.collection {
+  @include size(1300px, 600px);
+  margin: 0 auto;
+  margin-bottom: 200px;
+  h3 {
+    margin-left: 10px;
+  }
+  .collection_inner {
+    @include size(100%, 100%);
+    background-image: url(../images/main/collection_01.jpg);
+    background-size: 100% 100%;
+    display: flex;
+  }
+  .collection_inner > div {
+    @include size(25%, 100%);
+    border: 1px solid #ccc;
+    box-sizing: border-box;
   }
 }

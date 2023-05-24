@@ -44,6 +44,12 @@ body {
   height: 100%;
 }
 
+h3 {
+  font-family: "Bookk Myungjo";
+  font-weight: 400;
+  font-style: normal;
+}
+
 .banner {
   width: 100%;
   height: 40px;
@@ -78,7 +84,7 @@ body {
   width: 100%;
   height: 100vh;
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 .visual video {
   width: 100%;
@@ -175,21 +181,46 @@ body {
 
 .new {
   width: 1300px;
-  height: 500px;
-  display: flex;
+  height: 600px;
   margin: 0 auto;
+  margin-bottom: 200px;
 }
-.new .new_box {
+.new h3 {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.new .new_inner {
+  display: flex;
+}
+.new .new_inner .swiper {
+  width: 50%;
+  height: 80%;
+}
+.new .new_inner .right_box {
   width: 50%;
 }
-.new .new_box01 {
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
+
+.collection {
+  width: 1300px;
+  height: 600px;
+  margin: 0 auto;
+  margin-bottom: 200px;
 }
-.new .new_box01 div {
+.collection h3 {
+  margin-left: 10px;
+}
+.collection .collection_inner {
   width: 100%;
   height: 100%;
+  background-image: url(/collection_01.843e3c2d.jpg);
+  background-size: 100% 100%;
+  display: flex;
+}
+.collection .collection_inner > div {
+  width: 25%;
+  height: 100%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=/main.54166fbf.css.map */
