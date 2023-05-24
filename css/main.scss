@@ -230,10 +230,80 @@ h3 {
     background-image: url(../images/main/collection_01.jpg);
     background-size: 100% 100%;
     display: flex;
+    .collection_box1 {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .collection_box1:hover {
+      background-color: rgba(0, 0, 0, 0);
+      transition: 0.3s;
+    }
+    .collection_box2 {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .collection_box2:hover {
+      background-color: rgba(0, 0, 0, 0);
+      transition: 0.3s;
+    }
+    .collection_box3 {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .collection_box3:hover {
+      background-color: rgba(0, 0, 0, 0);
+      transition: 0.3s;
+    }
+    .collection_box4 {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .collection_box4:hover {
+      background-color: rgba(0, 0, 0, 0);
+      transition: 0.3s;
+    }
   }
   .collection_inner > div {
     @include size(25%, 100%);
-    border: 1px solid #ccc;
+    border: 0.5px solid #ccc;
     box-sizing: border-box;
   }
+}
+//collection
+
+//best
+.best {
+  @include size(1300px, auto);
+  margin: 0 auto;
+  margin-bottom: 200px;
+  h3 {
+    margin-left: 10px;
+  }
+  .best_inner {
+    display: flex;
+    .best_box1 {
+      width: 40%;
+    }
+    .best_box2 {
+      width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .best_box2 > div {
+      width: calc(100% / 3);
+      text-align: center;
+      line-height: 30px;
+    }
+  }
+}
+//best
+
+//test
+.test {
+  @include size(1300px, 600px);
+  margin: 0 auto;
+  margin-bottom: 200px;
+  overflow: hidden;
+}
+.test > div {
+  @include size(100%, 100%);
+  border: 0.5px solid #000;
+  box-sizing: border-box;
+  text-align: center;
 }
