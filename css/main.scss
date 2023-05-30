@@ -65,7 +65,6 @@ $border: (0.3px solid #000);
 body {
   background-color: $main;
   position: relative;
-  @include size(100%, 100%);
 }
 ///body
 h3 {
@@ -74,13 +73,41 @@ h3 {
 .banner {
   @include size(100%, 40px);
   background-color: #000;
-  display: flex;
+  position: relative;
   overflow: hidden;
   p {
+    position: absolute;
     width: 100%;
     color: #fff;
-    //animation: rolling 45s infinite both;
+    animation: rolling 60s infinite both;
     line-height: 40px;
+    span {
+      cursor: pointer;
+    }
+    span:hover {
+      text-decoration: underline;
+    }
+  }
+  P:hover {
+    animation-play-state: paused;
+  }
+  P:hover ~ p {
+    animation-play-state: paused;
+  }
+  .roll_text1 {
+    left: 0;
+  }
+  .roll_text2 {
+    left: 100%;
+  }
+  .roll_text3 {
+    left: 200%;
+  }
+  .roll_text4 {
+    left: 300%;
+  }
+  .roll_text5 {
+    left: 400%;
   }
   .close {
     display: block;
@@ -96,9 +123,20 @@ h3 {
   0% {
     transform: translateX(100%);
   }
-
+  20% {
+    transform: translateX(0%);
+  }
+  40% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(-200%);
+  }
+  80% {
+    transform: translateX(-300%);
+  }
   100% {
-    transform: translateX(-500%);
+    transform: translateX(-400%);
   }
 }
 ///rolling banner
@@ -147,23 +185,37 @@ h3 {
       letter-spacing: 5px;
     }
   }
-  .menu {
+  .menu_box {
     margin-left: 45px;
     @include size(570px, 100%);
-    ul {
+    ul.menu {
       @include size(100%, 100%);
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      li {
+      li.menu01 {
+        @include size(50px, 50px);
         margin-right: 80px;
         cursor: pointer;
+        text-align: center;
+        line-height: 50px;
       }
+      .menu01 > ul {
+        ul {
+          @include size(100%, 0);
+          display: flex;
+        }
+      }
+      /* //!li:hover {
+        border-bottom: 1px solid #000;
+        box-sizing: border-box;
+      } */
     }
   }
   .gnb {
     display: flex;
     margin-right: 45px;
+    margin-left: auto;
 
     ul {
       display: flex;
