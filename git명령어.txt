@@ -1,0 +1,70 @@
+command 명령어
+-md 폴더명
+-cd 폴더명 /cd.. 
+dir /dir -h
+
+사용자 환경설정
+git config --global user.name '이름'
+git config --global user.name '이메일'
+
+git 명령어 
+git init 저장소 생성 / git init 폴더명 
+git status 스테이징확인
+git add '스테이징파일명'
+
+git commit -m '버전구분메세지'
+git commit -am 한번 커밋된 버전이 수정버전을 스테이징과 커밋을 같이
+git log 커밋 확인
+
+복합명령어
+git add . 모디파이된 모든파일 스테이징 1번이상 커밋된 파일만 사용가능
+git commit -am 에드,커밋메세지 한번에 1번이상 커밋된 파일만 사용가능
+
+되돌리기
+git restore 파일명 수정되기 이전버전으로 내용되돌림
+git restore --staged 스테이지에 올라간 파일을 내리기
+
+git reset HEAD^ 커밋된 최근 버전을 언스테이징한다 
+git reset --hard 해시 특정 버전으로 가기 중간 단계 버전은 삭제됨 
+
+
+//
+브랜치
+git branch 브랜치 확인
+git branch 만들이름
+git switch 브랜치 바꾸기
+git merge 브랜치명(서브) 마스터에서 작업해야함
+git branch -d 병합된 브랜치 지우기
+git branch -D 병합되지 않은 브랜치 지우기 
+git log --oneline 커밋결과 한줄로 표시
+
+
+
+clone
+pull 
+push
+remote
+
+
+원격작업 
+github 레포지토리 만들기
+-
+git remote add origin (주소)
+git remote -v 확인
+
+git push -u origin master 최초 한번만 
+ git push 파일 올리기
+
+git pull origin master 파일 내리기 최초한번만
+git pull 파일 내리기
+
+git clone 원격주소 사용할 디렉토리이름 
+디렉토리 생성후 내려받기
+git clone 원격주소 
+미리 작업디렉토리 생성후 내려받기 
+
+git remote remove <name> 주소 삭제 
+
+main master 병합하기
+
+
