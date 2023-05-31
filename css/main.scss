@@ -79,7 +79,7 @@ h3 {
     position: absolute;
     width: 100%;
     color: #fff;
-    animation: rolling 60s infinite both;
+    //animation: rolling 60s infinite both;
     line-height: 40px;
     span {
       cursor: pointer;
@@ -153,6 +153,55 @@ h3 {
     top: 0;
     z-index: -1;
   }
+  .search {
+    display: none;
+    @include size(100%, 180px);
+    left: 0;
+    top: 0;
+    background-color: #fcf9ee;
+    position: absolute;
+    .logo {
+      @include size(200px, auto);
+      padding-top: 10px;
+      margin: 0 45px;
+      @include en_b();
+      p {
+        text-align: center;
+        font-size: 30px;
+        letter-spacing: 5px;
+      }
+      p:last-child {
+        font-size: 12px;
+        letter-spacing: 5px;
+      }
+    }
+    input {
+      border: none;
+      border-bottom: 1px solid #000;
+      display: block;
+      width: 80%;
+      margin: 30px auto;
+      background-color: #fcf9ee;
+    }
+    input:focus {
+      outline: none;
+    }
+    input::-webkit-search-decoration,
+    input::-webkit-search-cancel-button,
+    input::-webkit-search-results-button,
+    input::-webkit-search-results-decoration {
+      opacity: 0;
+      position: absolute;
+      right: 0;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      right: 1%;
+      cursor: pointer;
+      font-size: 30px;
+    }
+  }
 }
 
 //bg
@@ -173,9 +222,9 @@ h3 {
   .logo {
     @include size(200px, auto);
     padding-top: 10px;
-    margin-left: 45px;
+    margin: 0 45px;
+    color: #fff;
     p {
-      color: #fff;
       text-align: center;
       font-size: 30px;
       letter-spacing: 5px;
@@ -186,30 +235,93 @@ h3 {
     }
   }
   .menu_box {
-    margin-left: 45px;
     @include size(570px, 100%);
-    ul.menu {
+    .menu_list {
       @include size(100%, 100%);
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      li.menu01 {
+      .menu {
         @include size(50px, 50px);
         margin-right: 80px;
         cursor: pointer;
         text-align: center;
         line-height: 50px;
       }
-      .menu01 > ul {
-        ul {
-          @include size(100%, 0);
-          display: flex;
+      .menu:hover {
+        border-bottom: 0.5px solid #000;
+      }
+      .new_list {
+        width: 800px;
+        height: 0;
+        display: flex;
+        overflow: hidden;
+        line-height: 100px;
+        transition: 0.2s;
+        li {
+          margin-right: 50px;
+        }
+        li:last-child {
+          margin-right: 0;
         }
       }
-      /* //!li:hover {
-        border-bottom: 1px solid #000;
-        box-sizing: border-box;
-      } */
+      .menu01:hover .new_list {
+        height: 100px;
+      }
+      .sent_list {
+        width: 800px;
+        height: 0;
+        display: flex;
+        overflow: hidden;
+        line-height: 100px;
+        transition: 0.2s;
+
+        li {
+          margin-right: 50px;
+        }
+        li:last-child {
+          margin-right: 0;
+        }
+      }
+      .menu02:hover .sent_list {
+        height: 100px;
+      }
+      .shop_list {
+        width: 800px;
+        height: 0;
+        display: flex;
+        overflow: hidden;
+        line-height: 100px;
+        transition: 0.2s;
+
+        li {
+          margin-right: 50px;
+        }
+        li:last-child {
+          margin-right: 0;
+        }
+      }
+      .menu03:hover .shop_list {
+        height: 100px;
+      }
+      .about_list {
+        width: 800px;
+        height: 0;
+        display: flex;
+        overflow: hidden;
+        line-height: 100px;
+        transition: 0.2s;
+
+        li {
+          margin-right: 50px;
+        }
+        li:last-child {
+          margin-right: 0;
+        }
+      }
+      .menu04:hover .about_list {
+        height: 100px;
+      }
     }
   }
   .gnb {
@@ -237,11 +349,6 @@ h3 {
       }
       li:last-child {
         margin-right: 0;
-        img {
-          /*!! 
-           width: 120%;
-          height: 120%; */
-        }
       }
     }
   }
@@ -283,6 +390,8 @@ h3 {
     background-image: url(../images/main/collection_01.jpg);
     background-size: 100% 100%;
     display: flex;
+    text-align: center;
+    //
     .collection_box1 {
       background-color: rgba(0, 0, 0, 0.4);
     }
@@ -290,6 +399,7 @@ h3 {
       background-color: rgba(0, 0, 0, 0);
       transition: 0.3s;
     }
+    //
     .collection_box2 {
       background-color: rgba(0, 0, 0, 0.4);
     }
@@ -297,6 +407,12 @@ h3 {
       background-color: rgba(0, 0, 0, 0);
       transition: 0.3s;
     }
+    .collection_box2:hover {
+      background-color: rgba(0, 0, 0, 0);
+      transition: 0.3s;
+    }
+
+    //
     .collection_box3 {
       background-color: rgba(0, 0, 0, 0.4);
     }
@@ -304,6 +420,7 @@ h3 {
       background-color: rgba(0, 0, 0, 0);
       transition: 0.3s;
     }
+    //
     .collection_box4 {
       background-color: rgba(0, 0, 0, 0.4);
     }
@@ -311,18 +428,52 @@ h3 {
       background-color: rgba(0, 0, 0, 0);
       transition: 0.3s;
     }
+    a {
+      height: 100%;
+      text-align: center;
+    }
   }
-  .collection_inner > div {
+  .collection_box {
     @include size(25%, 100%);
+
     border: 0.5px solid #ccc;
     box-sizing: border-box;
+    position: relative;
   }
+  .title {
+    position: absolute;
+    left: 25%;
+    bottom: 20px;
+    text-align: center;
+    @include en();
+    p {
+      font-size: 30px;
+    }
+    span {
+      font-size: 25px;
+    }
+  }
+  .title01 {
+    position: absolute;
+    left: 25%;
+    bottom: 50%;
+    line-height: 1;
+
+    span {
+      font-size: 12px;
+    }
+  }
+}
+.collection_hover {
+  background-color: rgba(0, 0, 0, 0);
 }
 //collection
 
 //best
 .best {
   @include size(1300px, auto);
+  @include en();
+
   margin: 0 auto;
   margin-bottom: 200px;
   h3 {

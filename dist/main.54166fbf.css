@@ -59,7 +59,6 @@ h3 {
   position: absolute;
   width: 100%;
   color: #fff;
-  animation: rolling 60s infinite both;
   line-height: 40px;
 }
 .banner p span {
@@ -133,6 +132,59 @@ h3 {
   top: 0;
   z-index: -1;
 }
+.visual .search {
+  display: none;
+  width: 100%;
+  height: 180px;
+  left: 0;
+  top: 0;
+  background-color: #fcf9ee;
+  position: absolute;
+}
+.visual .search .logo {
+  width: 200px;
+  height: auto;
+  padding-top: 10px;
+  margin: 0 45px;
+  font-family: "Bookk Myungjo";
+  font-weight: 700;
+  font-style: bold;
+}
+.visual .search .logo p {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+.visual .search .logo p:last-child {
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+.visual .search input {
+  border: none;
+  border-bottom: 1px solid #000;
+  display: block;
+  width: 80%;
+  margin: 30px auto;
+  background-color: #fcf9ee;
+}
+.visual .search input:focus {
+  outline: none;
+}
+.visual .search input::-webkit-search-decoration,
+.visual .search input::-webkit-search-cancel-button,
+.visual .search input::-webkit-search-results-button,
+.visual .search input::-webkit-search-results-decoration {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+}
+.visual .search span {
+  position: absolute;
+  top: 0;
+  right: 1%;
+  cursor: pointer;
+  font-size: 30px;
+}
 
 .header_outer {
   border: 1px solid #fff;
@@ -156,10 +208,10 @@ h3 {
   width: 200px;
   height: auto;
   padding-top: 10px;
-  margin-left: 45px;
+  margin: 0 45px;
+  color: #fff;
 }
 .header .logo p {
-  color: #fff;
   text-align: center;
   font-size: 30px;
   letter-spacing: 5px;
@@ -169,22 +221,17 @@ h3 {
   letter-spacing: 5px;
 }
 .header .menu_box {
-  margin-left: 45px;
   width: 570px;
   height: 100%;
 }
-.header .menu_box ul.menu {
+.header .menu_box .menu_list {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* //!li:hover {
-    border-bottom: 1px solid #000;
-    box-sizing: border-box;
-  } */
 }
-.header .menu_box ul.menu li.menu01 {
+.header .menu_box .menu_list .menu {
   width: 50px;
   height: 50px;
   margin-right: 80px;
@@ -192,10 +239,76 @@ h3 {
   text-align: center;
   line-height: 50px;
 }
-.header .menu_box ul.menu .menu01 > ul ul {
-  width: 100%;
+.header .menu_box .menu_list .menu:hover {
+  border-bottom: 0.5px solid #000;
+}
+.header .menu_box .menu_list .new_list {
+  width: 800px;
   height: 0;
   display: flex;
+  overflow: hidden;
+  line-height: 100px;
+  transition: 0.2s;
+}
+.header .menu_box .menu_list .new_list li {
+  margin-right: 50px;
+}
+.header .menu_box .menu_list .new_list li:last-child {
+  margin-right: 0;
+}
+.header .menu_box .menu_list .menu01:hover .new_list {
+  height: 100px;
+}
+.header .menu_box .menu_list .sent_list {
+  width: 800px;
+  height: 0;
+  display: flex;
+  overflow: hidden;
+  line-height: 100px;
+  transition: 0.2s;
+}
+.header .menu_box .menu_list .sent_list li {
+  margin-right: 50px;
+}
+.header .menu_box .menu_list .sent_list li:last-child {
+  margin-right: 0;
+}
+.header .menu_box .menu_list .menu02:hover .sent_list {
+  height: 100px;
+}
+.header .menu_box .menu_list .shop_list {
+  width: 800px;
+  height: 0;
+  display: flex;
+  overflow: hidden;
+  line-height: 100px;
+  transition: 0.2s;
+}
+.header .menu_box .menu_list .shop_list li {
+  margin-right: 50px;
+}
+.header .menu_box .menu_list .shop_list li:last-child {
+  margin-right: 0;
+}
+.header .menu_box .menu_list .menu03:hover .shop_list {
+  height: 100px;
+}
+.header .menu_box .menu_list .about_list {
+  width: 800px;
+  height: 0;
+  display: flex;
+  overflow: hidden;
+  line-height: 100px;
+  transition: 0.2s;
+}
+.header .menu_box .menu_list .about_list li {
+  margin-right: 50px;
+}
+.header .menu_box .menu_list .about_list li:last-child {
+  margin-right: 0;
+}
+.header .menu_box .menu_list .menu04:hover .about_list {
+  height: 100px;
 }
 .header .gnb {
   display: flex;
@@ -225,11 +338,6 @@ h3 {
 }
 .header .gnb ul li:last-child {
   margin-right: 0;
-}
-.header .gnb ul li:last-child img {
-  /*!! 
-   width: 120%;
-  height: 120%; */
 }
 
 .new {
@@ -269,6 +377,7 @@ h3 {
   background-image: url(/collection_01.843e3c2d.jpg);
   background-size: 100% 100%;
   display: flex;
+  text-align: center;
 }
 .collection .collection_inner .collection_box1 {
   background-color: rgba(0, 0, 0, 0.4);
@@ -279,6 +388,10 @@ h3 {
 }
 .collection .collection_inner .collection_box2 {
   background-color: rgba(0, 0, 0, 0.4);
+}
+.collection .collection_inner .collection_box2:hover {
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.3s;
 }
 .collection .collection_inner .collection_box2:hover {
   background-color: rgba(0, 0, 0, 0);
@@ -298,16 +411,52 @@ h3 {
   background-color: rgba(0, 0, 0, 0);
   transition: 0.3s;
 }
-.collection .collection_inner > div {
+.collection .collection_inner a {
+  height: 100%;
+  text-align: center;
+}
+.collection .collection_box {
   width: 25%;
   height: 100%;
   border: 0.5px solid #ccc;
   box-sizing: border-box;
+  position: relative;
+}
+.collection .title {
+  position: absolute;
+  left: 25%;
+  bottom: 20px;
+  text-align: center;
+  font-family: "Bookk Myungjo";
+  font-weight: 400;
+  font-style: normal;
+}
+.collection .title p {
+  font-size: 30px;
+}
+.collection .title span {
+  font-size: 25px;
+}
+.collection .title01 {
+  position: absolute;
+  left: 25%;
+  bottom: 50%;
+  line-height: 1;
+}
+.collection .title01 span {
+  font-size: 12px;
+}
+
+.collection_hover {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .best {
   width: 1300px;
   height: auto;
+  font-family: "Bookk Myungjo";
+  font-weight: 400;
+  font-style: normal;
   margin: 0 auto;
   margin-bottom: 200px;
 }

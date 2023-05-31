@@ -136,15 +136,50 @@ var swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar"
   }
 });
-//컬렉션
-var backImg = document.querySelector(".collection_inner");
-var hoverBox = document.querySelectorAll(".collection_inner div");
 
-/*  for (let i = 0; i < hoverBox.length; i++) {
-    hoverBox[i].addEventListener("mouseover", function () {
+//search
+var searchBtn = document.querySelector(".gnb .search_btn");
+var search = document.querySelector(".search");
+var searchClose = document.querySelector(".search span");
+console.log(search);
+console.log(searchBtn);
+console.log(searchClose);
+searchBtn.addEventListener("click", function () {
+  search.style.display = "block";
+});
+searchClose.addEventListener("click", function () {
+  search.style.display = "none";
+});
+//
 
-    });
-  } */
+//menuMouseEvent
+var visual = document.querySelector(".visual");
+var headerOuter = document.querySelector(".header_outer");
+var header = document.querySelector(".header");
+var logo = document.querySelector(".header .logo");
+var menu = document.querySelectorAll("li.menu");
+var gnb = document.querySelector(".gnb");
+for (var i = 0; i <= menu.length; i++) {
+  menu[i].addEventListener("mouseout", function () {
+    headerOuter.style.height = "auto";
+    headerOuter.style.borderTop = "1px solid #fff";
+    headerOuter.style.borderBottom = "1px solid #fff";
+    headerOuter.style.backgroundColor = "";
+    logo.style.color = "#fff";
+    header.style.color = "#fff";
+    headerOuter.style.transition = "0.3s";
+    gnb.style = "filter:brightness(1);";
+  });
+  menu[i].addEventListener("mouseover", function () {
+    headerOuter.style.height = "180px";
+    headerOuter.style.border = "none";
+    headerOuter.style.backgroundColor = "#fcf9ee";
+    logo.style.color = "#000";
+    header.style.color = "#000";
+    headerOuter.style.transition = "0.3s";
+    gnb.style = "filter:brightness(0);";
+  });
+}
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -170,7 +205,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65474" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62666" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
