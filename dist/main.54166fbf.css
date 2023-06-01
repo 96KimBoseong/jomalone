@@ -187,10 +187,14 @@ h3 {
 }
 
 .header_outer {
+  width: 100%;
+  height: auto;
   border: 1px solid #fff;
   border-right: none;
   border-left: none;
   box-sizing: border-box;
+  /* position: sticky;
+  top: 0; */
 }
 
 .header {
@@ -342,7 +346,7 @@ h3 {
 
 .new {
   width: 1300px;
-  height: 600px;
+  height: 650px;
   margin: 0 auto;
   margin-bottom: 200px;
   overflow: hidden;
@@ -354,12 +358,74 @@ h3 {
 .new .new_inner {
   display: flex;
 }
-.new .new_inner .swiper {
+.new .new_inner .left_box {
   width: 50%;
+}
+.new .new_inner .left_box .swiper_main {
+  width: 100%;
+  height: 70%;
+}
+.new .new_inner .left_box .swiper_main .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.new .new_inner .left_box .swiper_main .swiper-slide a {
+  width: 70%;
   height: 80%;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.new .new_inner .left_box .swiper_main .swiper-slide a img {
+  height: 100%;
+}
+.new .new_inner .left_box .swiper_main .swiper-slide p {
+  text-align: center;
+  font-size: 20px;
+}
+.new .new_inner .left_box .swiper_main .swiper-slide p span {
+  font-family: "Bookk Myungjo";
+  font-weight: 400;
+  font-style: normal;
+}
+.new .new_inner .left_box .swiper_thums {
+  width: 55%;
+  height: auto;
+}
+.new .new_inner .left_box .swiper_thums .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.new .new_inner .left_box .swiper_thums .swiper-slide-thumb-active {
+  opacity: 1;
 }
 .new .new_inner .right_box {
   width: 50%;
+}
+.new .new_inner .swiper-button-next {
+  background-image: url(/swap-right_2.de165a5a.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 45px;
+  height: 45px;
+  margin-right: 20px;
+}
+.new .new_inner .swiper-button-prev {
+  background-image: url(/swap-left_2.abbd79f6.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: scaleY(-1);
+  width: 45px;
+  height: 45px;
+  margin-left: 20px;
+}
+.new .new_inner .swiper-button-prev::after {
+  display: none;
+}
+.new .new_inner .swiper-button-next::after {
+  display: none;
 }
 
 .collection {
@@ -485,7 +551,7 @@ h3 {
   line-height: 30px;
 }
 .best .best_inner .best_box2 > div:hover img {
-  scale: 1.1;
+  scale: 1.07;
   transition: 0.4s;
 }
 .best .best_inner .best_box2 > div:hover .text {
@@ -647,7 +713,7 @@ h3 {
 }
 
 .result_img:hover img {
-  scale: 1.07;
+  scale: 1.04;
 }
 
 .tab {
@@ -670,63 +736,197 @@ h3 {
   left: 5%;
   top: -5%;
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 45px 0;
+  padding-top: 45px;
 }
-.tab label {
+.tab .tab_menu label {
   display: block;
   background-color: #fcf9ee;
   margin: 0 auto;
   margin-bottom: 30px;
   width: 90px;
-  height: 100px;
+  height: 90px;
   text-align: center;
-  padding-top: 20px;
   box-sizing: border-box;
+  border: 1px solid #000;
+  cursor: pointer;
 }
-.tab label span {
+.tab .tab_menu label span {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
 }
-.tablabel:last-child {
+.tab .tab_menu label:last-child {
   margin-bottom: 0;
 }
+.tab .tab_menu p {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding-top: 13px;
+  box-sizing: border-box;
+}
 .tab .sheet01 {
+  background-image: url(/tab_date_bg.2ee8b04e.jpg);
+}
+.tab .sheet02 {
+  background-image: url(/tab_rain_bg.f3634c7d.jpg);
+}
+.tab .sheet03 {
+  background-image: url(/tab_business_bg.3ad327d7.jpg);
+}
+.tab .sheet04 {
+  background-image: url(/tab_anniversary_bg.fca116cb.jpg);
+}
+.tab .sheet05 {
+  background-image: url(/tab_christmas_bg.01d896f0.jpg);
+}
+.tab .sheet {
   width: 100%;
   height: 100%;
-  background-image: url(/tab_anniversary_bg.fca116cb.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.3);
   background-blend-mode: color;
+  display: none;
 }
-.tab .sheet01 h3 {
+.tab .sheet_inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab .sheet_inner h3 {
   position: absolute;
   left: 40%;
   top: 15%;
 }
-.tab .sheet01 > div {
+.tab .sheet_inner > div {
   width: 260px;
   height: 335px;
   background-color: rgba(255, 255, 255, 0.9);
   margin-right: 20px;
   text-align: center;
   border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-.tab:last-child {
-  margin-right: 0;
+.tab .sheet_inner > div p span {
+  font-family: "Bookk Myungjo";
+  font-weight: 400;
+  font-style: normal;
+}
+.tab .sheet01 .goods02 img {
+  width: 55%;
+  height: 80%;
+  margin: 0 auto;
+}
+.tab .sheet02 .goods03 img {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+.tab .sheet div > img {
+  transition: 0.3s;
+}
+.tab .sheet div:hover > img {
+  scale: 1.04;
+}
+
+/* #tab01:checked ~ .sheet02,
+.sheet03,
+.sheet04,
+.sheet05 {
+  display: none;
+} */
+#tab01:checked ~ .sheet01 {
+  display: block;
+}
+
+#tab02:checked ~ .sheet02 {
+  display: block;
+}
+
+#tab03:checked ~ .sheet03 {
+  display: block;
+}
+
+#tab04:checked ~ .sheet04 {
+  display: block;
+}
+
+#tab05:checked ~ .sheet05 {
+  display: block;
+}
+
+#tab01:checked ~ .tab_menu .tab_label01 p {
+  border: 0.5px solid #000;
+}
+
+#tab02:checked ~ .tab_menu .tab_label02 p {
+  border: 0.5px solid #000;
+}
+
+#tab03:checked ~ .tab_menu .tab_label03 p {
+  border: 0.5px solid #000;
+}
+
+#tab04:checked ~ .tab_menu .tab_label04 p {
+  border: 0.5px solid #000;
+}
+
+#tab05:checked ~ .tab_menu .tab_label05 p {
+  border: 0.5px solid #000;
 }
 
 .sns {
   width: 1300px;
-  height: 600px;
+  height: 650px;
+  margin: 0 auto;
   margin-bottom: 200px;
-  overflow: hidden;
 }
-
+.sns .swiper .swiper-wrapper .swiper-slide {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.sns .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+.sns .swiper .swiper-wrapper .swiper-slide p {
+  height: 70px;
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 5px 0;
+  transition: 0.5s;
+}
+.sns .swiper .swiper-wrapper .swiper-slide .add_cart {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: 8px;
+  top: 8px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 3px;
+  box-sizing: border-box;
+}
+.sns .swiper .swiper-wrapper .swiper-slide .add_cart img {
+  width: 100%;
+  height: 100%;
+}
+.sns .swiper .swiper-wrapper .swiper-slide:hover p {
+  bottom: 0;
+}
 .footer {
   width: 1300px;
   height: 400px;

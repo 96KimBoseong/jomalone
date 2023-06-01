@@ -118,24 +118,28 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-var swiper = new Swiper(".swiper", {
-  // Optional parameters
-  direction: "vertical",
+var swiper = new Swiper(".swiper_main", {
+  //effect: "fade",
   loop: true,
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination"
-  },
-  // Navigation arrows
+  freeMode: true,
+  watchSlidesProgress: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
   },
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar"
+  thumbs: {
+    swiper: swiperThums
   }
 });
+var swiperThums = new Swiper(".swiper_thums", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true
+});
+/* swiper.controller.control = swiperThums;
+swiperThums.controller.control = swiper; */
 
 //menuMouseEvent
 var visual = document.querySelector(".visual");
@@ -222,6 +226,20 @@ var question01 = document.querySelector(".question1");
 var question02 = document.querySelector(".question2");
 var question03 = document.querySelector(".question3");
 var next = document.querySelectorAll(".question p");
+
+//sns
+
+var swiperSns = new Swiper(".sns_swiper", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
+  //freeMode: true,
+  watchSlidesProgress: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -247,7 +265,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61013" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53902" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

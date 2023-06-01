@@ -1,24 +1,26 @@
-const swiper = new Swiper(".swiper", {
-  // Optional parameters
-  direction: "vertical",
+const swiper = new Swiper(".swiper_main", {
+  //effect: "fade",
   loop: true,
+  freeMode: true,
+  watchSlidesProgress: true,
 
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
-
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
+  thumbs: {
+    swiper: swiperThums,
   },
 });
+const swiperThums = new Swiper(".swiper_thums", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+/* swiper.controller.control = swiperThums;
+swiperThums.controller.control = swiper; */
 
 //menuMouseEvent
 const visual = document.querySelector(".visual");
@@ -108,3 +110,18 @@ const question01 = document.querySelector(".question1");
 const question02 = document.querySelector(".question2");
 const question03 = document.querySelector(".question3");
 const next = document.querySelectorAll(".question p");
+
+//sns
+
+const swiperSns = new Swiper(".sns_swiper", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
+  //freeMode: true,
+  watchSlidesProgress: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
