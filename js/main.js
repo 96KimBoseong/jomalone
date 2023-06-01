@@ -20,21 +20,6 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-//search
-const searchBtn = document.querySelector(".gnb .search_btn");
-const search = document.querySelector(".search");
-const searchClose = document.querySelector(".search span");
-console.log(search);
-console.log(searchBtn);
-console.log(searchClose);
-searchBtn.addEventListener("click", function () {
-  search.style.display = "block";
-});
-searchClose.addEventListener("click", function () {
-  search.style.display = "none";
-});
-//
-
 //menuMouseEvent
 const visual = document.querySelector(".visual");
 const headerOuter = document.querySelector(".header_outer");
@@ -43,7 +28,9 @@ const logo = document.querySelector(".header .logo");
 const menu = document.querySelectorAll("li.menu");
 const gnb = document.querySelector(".gnb");
 
-for (let i = 0; i <= menu.length; i++) {
+//
+//
+for (let i = 0; i < menu.length; i++) {
   menu[i].addEventListener("mouseout", function () {
     headerOuter.style.height = "auto";
     headerOuter.style.borderTop = "1px solid #fff";
@@ -65,3 +52,59 @@ for (let i = 0; i <= menu.length; i++) {
     gnb.style = "filter:brightness(0);";
   });
 }
+
+//search
+const searchBtn = document.querySelector(".gnb .search_btn");
+const search = document.querySelector(".search");
+const searchClose = document.querySelector(".search span");
+
+searchBtn.addEventListener("click", function () {
+  search.style.display = "block";
+});
+searchClose.addEventListener("click", function () {
+  search.style.display = "none";
+});
+//
+
+//collection
+const BackImg = document.querySelectorAll(".collection_inner .back_img");
+const collectionBox = document.querySelectorAll(".collection_box a");
+const collectionBackColor = document.querySelectorAll(".collection_box");
+console.log(collectionBox);
+
+for (let i = 0; i < collectionBox.length; i++) {
+  collectionBox[i].addEventListener("mouseover", () => {
+    BackImg[i].style.display = "block";
+
+    collectionBackColor[i].classList.remove("none");
+    collectionBackColor[i].classList.add("hover");
+    if (i > 0) {
+      collectionBackColor[0].classList.add("none");
+      collectionBackColor[0].classList.remove("hover");
+    }
+  });
+  collectionBox[i].addEventListener("mouseout", () => {
+    BackImg[i].style.display = "none";
+
+    BackImg[0].style.display = "block";
+
+    collectionBackColor[i].classList.remove("hover");
+    collectionBackColor[i].classList.add("none");
+    if (i > 0) {
+      collectionBackColor[0].classList.add("hover");
+      collectionBackColor[0].classList.remove("none");
+    } else if (i == 0) {
+      collectionBackColor[0].classList.add("hover");
+      collectionBackColor[0].classList.remove("none");
+    }
+  });
+}
+//
+
+//test
+const start = document.querySelector(".start");
+const startBtn = document.querySelector(".test_start");
+const question01 = document.querySelector(".question1");
+const question02 = document.querySelector(".question2");
+const question03 = document.querySelector(".question3");
+const next = document.querySelectorAll(".question p");

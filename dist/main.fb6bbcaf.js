@@ -137,21 +137,6 @@ var swiper = new Swiper(".swiper", {
   }
 });
 
-//search
-var searchBtn = document.querySelector(".gnb .search_btn");
-var search = document.querySelector(".search");
-var searchClose = document.querySelector(".search span");
-console.log(search);
-console.log(searchBtn);
-console.log(searchClose);
-searchBtn.addEventListener("click", function () {
-  search.style.display = "block";
-});
-searchClose.addEventListener("click", function () {
-  search.style.display = "none";
-});
-//
-
 //menuMouseEvent
 var visual = document.querySelector(".visual");
 var headerOuter = document.querySelector(".header_outer");
@@ -159,7 +144,10 @@ var header = document.querySelector(".header");
 var logo = document.querySelector(".header .logo");
 var menu = document.querySelectorAll("li.menu");
 var gnb = document.querySelector(".gnb");
-for (var i = 0; i <= menu.length; i++) {
+
+//
+//
+for (var i = 0; i < menu.length; i++) {
   menu[i].addEventListener("mouseout", function () {
     headerOuter.style.height = "auto";
     headerOuter.style.borderTop = "1px solid #fff";
@@ -180,6 +168,60 @@ for (var i = 0; i <= menu.length; i++) {
     gnb.style = "filter:brightness(0);";
   });
 }
+
+//search
+var searchBtn = document.querySelector(".gnb .search_btn");
+var search = document.querySelector(".search");
+var searchClose = document.querySelector(".search span");
+searchBtn.addEventListener("click", function () {
+  search.style.display = "block";
+});
+searchClose.addEventListener("click", function () {
+  search.style.display = "none";
+});
+//
+
+//collection
+var BackImg = document.querySelectorAll(".collection_inner .back_img");
+var collectionBox = document.querySelectorAll(".collection_box a");
+var collectionBackColor = document.querySelectorAll(".collection_box");
+console.log(collectionBox);
+var _loop = function _loop(_i) {
+  collectionBox[_i].addEventListener("mouseover", function () {
+    BackImg[_i].style.display = "block";
+    collectionBackColor[_i].classList.remove("none");
+    collectionBackColor[_i].classList.add("hover");
+    if (_i > 0) {
+      collectionBackColor[0].classList.add("none");
+      collectionBackColor[0].classList.remove("hover");
+    }
+  });
+  collectionBox[_i].addEventListener("mouseout", function () {
+    BackImg[_i].style.display = "none";
+    BackImg[0].style.display = "block";
+    collectionBackColor[_i].classList.remove("hover");
+    collectionBackColor[_i].classList.add("none");
+    if (_i > 0) {
+      collectionBackColor[0].classList.add("hover");
+      collectionBackColor[0].classList.remove("none");
+    } else if (_i == 0) {
+      collectionBackColor[0].classList.add("hover");
+      collectionBackColor[0].classList.remove("none");
+    }
+  });
+};
+for (var _i = 0; _i < collectionBox.length; _i++) {
+  _loop(_i);
+}
+//
+
+//test
+var start = document.querySelector(".start");
+var startBtn = document.querySelector(".test_start");
+var question01 = document.querySelector(".question1");
+var question02 = document.querySelector(".question2");
+var question03 = document.querySelector(".question3");
+var next = document.querySelectorAll(".question p");
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -205,7 +247,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62666" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61013" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

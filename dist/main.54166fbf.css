@@ -21,7 +21,7 @@ img {
 
 @font-face {
   font-family: "KOTRA_GOTHIC";
-  src: url(/KOTRA_BOLD_.cd14f760.woff) format("woff");
+  src: url(/KOTRA_GOTHIC.14b9dfcf.woff) format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -374,42 +374,30 @@ h3 {
 .collection .collection_inner {
   width: 100%;
   height: 100%;
-  background-image: url(/collection_01.843e3c2d.jpg);
-  background-size: 100% 100%;
   display: flex;
   text-align: center;
+  position: relative;
+  color: #fff;
 }
-.collection .collection_inner .collection_box1 {
-  background-color: rgba(0, 0, 0, 0.4);
+.collection .collection_inner .back_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
-.collection .collection_inner .collection_box1:hover {
-  background-color: rgba(0, 0, 0, 0);
-  transition: 0.3s;
+.collection .collection_inner .back_img img {
+  width: 100%;
+  height: 100%;
 }
-.collection .collection_inner .collection_box2 {
-  background-color: rgba(0, 0, 0, 0.4);
+.collection .collection_inner .back_img:nth-child(2) {
+  display: none;
 }
-.collection .collection_inner .collection_box2:hover {
-  background-color: rgba(0, 0, 0, 0);
-  transition: 0.3s;
+.collection .collection_inner .back_img:nth-child(3) {
+  display: none;
 }
-.collection .collection_inner .collection_box2:hover {
-  background-color: rgba(0, 0, 0, 0);
-  transition: 0.3s;
-}
-.collection .collection_inner .collection_box3 {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.collection .collection_inner .collection_box3:hover {
-  background-color: rgba(0, 0, 0, 0);
-  transition: 0.3s;
-}
-.collection .collection_inner .collection_box4 {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.collection .collection_inner .collection_box4:hover {
-  background-color: rgba(0, 0, 0, 0);
-  transition: 0.3s;
+.collection .collection_inner .back_img:nth-child(4) {
+  display: none;
 }
 .collection .collection_inner a {
   height: 100%;
@@ -447,53 +435,219 @@ h3 {
   font-size: 12px;
 }
 
-.collection_hover {
+.hover {
   background-color: rgba(0, 0, 0, 0);
+}
+
+.none {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .best {
   width: 1300px;
-  height: auto;
+  height: 600px;
   font-family: "Bookk Myungjo";
   font-weight: 400;
   font-style: normal;
   margin: 0 auto;
   margin-bottom: 200px;
+  box-sizing: border-box;
+}
+.best img {
+  height: 100%;
 }
 .best h3 {
   margin-left: 10px;
 }
 .best .best_inner {
   display: flex;
+  width: 100%;
+  height: 100%;
 }
 .best .best_inner .best_box1 {
-  width: 40%;
+  width: 530px;
+  height: 100%;
 }
 .best .best_inner .best_box2 {
-  width: 60%;
+  width: 770px;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
+}
+.best .best_inner .best_box2 img {
+  width: 184px;
+  height: 184px;
+  margin: 0 auto;
 }
 .best .best_inner .best_box2 > div {
   width: 33.3333333333%;
   text-align: center;
   line-height: 30px;
 }
+.best .best_inner .best_box2 > div:hover img {
+  scale: 1.1;
+  transition: 0.4s;
+}
+.best .best_inner .best_box2 > div:hover .text {
+  display: none;
+}
+.best .best_inner .best_box2 > div:hover .preview_btn {
+  display: block;
+}
+.best .best_inner .preview_btn {
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  border-radius: 12px;
+  width: 80%;
+  height: 30px;
+  margin: 0 auto;
+  margin-top: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-style: normal;
+  display: none;
+}
 
 .test {
   width: 1300px;
   height: 600px;
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-style: normal;
   margin: 0 auto;
   margin-bottom: 200px;
   overflow: hidden;
+  position: relative;
+}
+.test .start {
+  position: relative;
+  padding-top: 80px;
+  display: none;
+}
+.test .start h3 {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 55px;
+}
+.test .start .test_start {
+  width: 330px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #fff;
+  line-height: 50px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.test .question {
+  padding-top: 45px;
+}
+.test .question h3 {
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 90px;
+  font-size: 25px;
+}
+.test .question .answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.test .question .answer .img_box1 {
+  margin-right: 200px;
+}
+.test .question .answer .img_box1,
+.test .question .answer .img_box2 {
+  font-size: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.test .question .answer .img_box1 img,
+.test .question .answer .img_box2 img {
+  width: 350px;
+  height: 220px;
+}
+.test .question .answer p {
+  width: 310px;
+  height: 50px;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 35px;
+  line-height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.test .question .answer p:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.question1 {
+  display: none;
+}
+
+.question2 {
+  display: none;
+}
+
+.question3 {
+  display: none;
 }
 
 .test > div {
   width: 100%;
   height: 100%;
-  border: 0.5px solid #000;
   box-sizing: border-box;
   text-align: center;
+}
+
+.test::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(/test_bg.97dd44b5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.result h3 {
+  margin: 80px 0 65px 0;
+  font-size: 25px;
+}
+.result .result_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result .result_flex img {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  transition: 0.4s;
+}
+.result .result_img3 {
+  margin-right: 0;
+}
+
+.result_flex > div {
+  width: 310px;
+  height: 310px;
+  background-color: #fff;
+  margin-right: 10px;
+}
+
+.result_img:hover img {
+  scale: 1.07;
 }
 
 .tab {
