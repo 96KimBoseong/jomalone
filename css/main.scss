@@ -13,6 +13,7 @@ a {
 img {
   display: block;
   width: 100%;
+  object-fit: cover;
 }
 // font
 @font-face {
@@ -70,6 +71,7 @@ body {
 ///body
 h3 {
   @include en();
+  padding: 5px;
 } //title en
 .banner {
   @include size(100%, 40px);
@@ -146,7 +148,7 @@ h3 {
 .visual {
   @include size(100%, 100vh);
   position: relative;
-  margin-bottom: 200px;
+  margin-bottom: 300px;
   video {
     @include size(100%, auto);
     position: absolute;
@@ -464,6 +466,7 @@ h3 {
       @include size(100%, 100%);
       img {
         @include size(100%, 100%);
+        object-fit: cover;
       }
     }
     .back_img:nth-child(1) {
@@ -723,7 +726,7 @@ h3 {
   @include size(1300px, 600px);
   margin: 0 auto;
   position: relative;
-  margin-bottom: 200px;
+  margin-bottom: 300px;
   input {
     display: none;
   }
@@ -871,10 +874,16 @@ h3 {
 
 //sns
 .sns {
-  @include size(1300px, 650px);
+  position: relative;
+  @include size(1300px, 300px);
   margin: 0 auto;
   margin-bottom: 200px;
+  overflow: hidden;
   .swiper {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    width: 1500px;
     .swiper-wrapper {
       .swiper-slide {
         @include size(300px, 300px);
@@ -893,6 +902,7 @@ h3 {
           background-color: rgba(255, 255, 255, 0.4);
           padding: 5px 0;
           transition: 0.5s;
+          border-radius: 20px 20px 0 0;
         }
         .add_cart {
           position: absolute;
@@ -914,6 +924,25 @@ h3 {
       .swiper-slide:hover .add_cart {
       }
     }
+    .swiper-button-prev,
+    .swiper-button-next {
+      background-color: #fff;
+      opacity: 0.7;
+      color: black;
+      width: 90px;
+    }
+    .swiper-button-prev {
+      position: absolute;
+      left: 100px;
+      top: 22px;
+      height: 100%;
+    }
+    .swiper-button-next {
+      position: absolute;
+      right: 100px;
+      top: 22px;
+      height: 100%;
+    }
   }
 }
 //sns
@@ -922,7 +951,6 @@ h3 {
 .footer {
   @include size(1300px, 400px);
   margin: 0 auto;
-  margin-bottom: 200px;
   background-color: #444;
   color: #fff;
   padding: 25px;

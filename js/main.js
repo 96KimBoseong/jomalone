@@ -111,12 +111,13 @@ const question02 = document.querySelector(".question2");
 const question03 = document.querySelector(".question3");
 const next = document.querySelectorAll(".question p");
 
+//
 //sns
 
 const swiperSns = new Swiper(".sns_swiper", {
   loop: true,
-  spaceBetween: 10,
-  slidesPerView: 4,
+  spaceBetween: 15,
+  slidesPerView: 5,
   //freeMode: true,
   watchSlidesProgress: true,
 

@@ -227,12 +227,13 @@ var question02 = document.querySelector(".question2");
 var question03 = document.querySelector(".question3");
 var next = document.querySelectorAll(".question p");
 
+//
 //sns
 
 var swiperSns = new Swiper(".sns_swiper", {
   loop: true,
-  spaceBetween: 10,
-  slidesPerView: 4,
+  spaceBetween: 15,
+  slidesPerView: 5,
   //freeMode: true,
   watchSlidesProgress: true,
   navigation: {
@@ -265,7 +266,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53902" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53025" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
