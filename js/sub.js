@@ -41,8 +41,8 @@ searchBtn.addEventListener("click", function () {
 });
 searchClose.addEventListener("click", function () {
   search.style.display = "none";
-}); */
-//
+} );*/
+//post html 연결 잘못됨 오류남
 //subList
 const item = [
   { src: "/images/sub_cologne/sub_item01.png", en: "Blackberry & Bay Cologne", ko: "블랙베리 앤 베이 코롱", price: "₩ 218,000" },
@@ -64,10 +64,13 @@ const subImg = document.querySelectorAll(".item_list .item .img_box img");
 const subTextEn = document.querySelectorAll(".item_list .item .text .en_title");
 const subTextKo = document.querySelectorAll(".item_list .item .text .ko_title");
 const price = document.querySelectorAll(".item_list .item .text .price");
-console.log(subImg);
+const select = document.getElementById("sort");
+
+console.log(select);
+/* console.log(subImg);
 console.log(subTextEn);
 console.log(subTextKo);
-console.log(price);
+console.log(price); */
 
 for (let i = 0; i < item.length; i++) {
   subImg[i].src = item[i].src;
@@ -75,3 +78,11 @@ for (let i = 0; i < item.length; i++) {
   subTextKo[i].textContent = item[i].ko;
   price[i].textContent = item[i].price;
 }
+console.log(select.value);
+select.addEventListener("change", function () {
+  if (select.value == "pop") {
+    item.sort(function (a, b) {
+      return a.price - b.price;
+    });
+  }
+});

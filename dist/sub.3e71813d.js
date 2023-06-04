@@ -161,8 +161,8 @@ searchBtn.addEventListener("click", function () {
 });
 searchClose.addEventListener("click", function () {
   search.style.display = "none";
-}); */
-//
+} );*/
+//post html 연결 잘못됨 오류남
 //subList
 var item = [{
   src: "/images/sub_cologne/sub_item01.png",
@@ -229,16 +229,27 @@ var subImg = document.querySelectorAll(".item_list .item .img_box img");
 var subTextEn = document.querySelectorAll(".item_list .item .text .en_title");
 var subTextKo = document.querySelectorAll(".item_list .item .text .ko_title");
 var price = document.querySelectorAll(".item_list .item .text .price");
-console.log(subImg);
+var select = document.getElementById("sort");
+console.log(select);
+/* console.log(subImg);
 console.log(subTextEn);
 console.log(subTextKo);
-console.log(price);
+console.log(price); */
+
 for (var _i = 0; _i < item.length; _i++) {
   subImg[_i].src = item[_i].src;
   subTextEn[_i].textContent = item[_i].en;
   subTextKo[_i].textContent = item[_i].ko;
   price[_i].textContent = item[_i].price;
 }
+console.log(select.value);
+select.addEventListener("change", function () {
+  if (select.value == "pop") {
+    item.sort(function (a, b) {
+      return a.price - b.price;
+    });
+  }
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -264,7 +275,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59936" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49908" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
