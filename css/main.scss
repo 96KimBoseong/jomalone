@@ -76,7 +76,8 @@ h3 {
 .banner {
   @include size(100%, 40px);
   background-color: #000;
-  position: relative;
+  position: absolute;
+  top: 0;
   overflow: hidden;
   p {
     position: absolute;
@@ -156,6 +157,21 @@ h3 {
     top: 0;
     z-index: -1;
   }
+}
+
+//bg
+//header
+.header_outer {
+  position: absolute;
+  top: 40px;
+  @include size(100%, auto);
+  border: 1px solid #fff;
+  border-right: none;
+  border-left: none;
+  box-sizing: border-box;
+  z-index: 9999;
+  /* position: sticky;
+  top: 0; */
   .search {
     display: none;
     @include size(100%, 180px);
@@ -205,18 +221,6 @@ h3 {
       font-size: 30px;
     }
   }
-}
-
-//bg
-//header
-.header_outer {
-  @include size(100%, auto);
-  border: 1px solid #fff;
-  border-right: none;
-  border-left: none;
-  box-sizing: border-box;
-  /* position: sticky;
-  top: 0; */
 }
 .header {
   @include size(1300px, 80px);
@@ -600,7 +604,6 @@ h3 {
   .start {
     position: relative;
     padding-top: 80px;
-    display: none;
     h3 {
       font-size: 40px;
       color: #fff;
@@ -620,6 +623,7 @@ h3 {
   //q
   .question {
     padding-top: 45px;
+
     h3 {
       @include ko;
       margin-bottom: 90px;
@@ -689,7 +693,7 @@ h3 {
   z-index: -1;
 }
 .result {
-  //display: none;
+  display: none;
   h3 {
     margin: 80px 0 65px 0;
     font-size: 25px;
@@ -820,6 +824,7 @@ h3 {
   .sheet01 .goods02 img {
     @include size(55%, 80%);
     margin: 0 auto;
+    object-fit: unset;
   }
   .sheet02 .goods03 img {
     @include size(80%, 80%);

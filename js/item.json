@@ -1,0 +1,14 @@
+[
+  { "src": "./images/sub_cologne/sub_item01.png", "en": "Blackberry & Bay Cologne", "ko": "블랙베리 앤 베이 코롱", "price": "218000", "id": 1 },
+  { "src": "./images/sub_cologne/sub_item02.png", "en": "Lime Basil & Mandarin Cologne", "ko": "라임 바질 앤 만다린 코롱", "price": "218000", "id": "2" },
+  { "src": "./images/sub_cologne/sub_item03.png", "en": "Wood Sage & Sea Salt Cologne", "ko": "우드세이지 앤 씨쏠트 코롱", "price": "218000", "id": "3" },
+  { "src": "./images/sub_cologne/sub_item04.png", "en": "Star Magnolia Cologne", "ko": "스타 매그놀리아 코롱", "price": "225000", "id": "4" },
+  { "src": "./images/sub_cologne/sub_item05.png", "en": "Nashi Blossom Cologne", "ko": "나시 블로썸 코롱", "price": "225000", "id": "5" },
+  { "src": "./images/sub_cologne/sub_item06.png", "en": "Waterlily Cologne", "ko": "워터릴리 코롱", "price": "225000", "id": "6" },
+  { "src": "./images/sub_cologne/sub_item07.png", "en": "Special-Edition Red Roses Cologne", "ko": "스페셜 에디션 레드 로즈 코롱", "price": "160000", "id": "7" },
+  { "src": "./images/sub_cologne/sub_item08.png", "en": "Rose Water & Vanilla Cologne", "ko": "로즈 워터 앤 바닐라 코롱", "price": "116000", "id": "8" },
+  { "src": "./images/sub_cologne/sub_item09.png", "en": "Rose Blush Cologne", "ko": "로즈 블러쉬 코롱", "price": "116000", "id": "9" },
+  { "src": "./images/sub_cologne/sub_item10.png", "en": "The Golden & Sweet Duo", "ko": "더 골든 앤 스윗 듀오", "price": "220000", "id": "10" },
+  { "src": "./images/sub_cologne/sub_item11.png", "en": "Spirited & Addictive Duo", "ko": "스피릿 앤 에딕티드 듀오", "price": "220000", "id": "11" },
+  { "src": "./images/sub_cologne/sub_item12.png", "en": "Fruity & Sweet Duo", "ko": "프루티 앤 스윗 듀오", "price": "220000", "id": "12" }
+]

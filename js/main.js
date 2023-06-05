@@ -1,3 +1,14 @@
+const { result } = require("lodash");
+
+const swiperThums = new Swiper(".swiper_thums", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+/* swiper.controller.control = swiperThums;
+swiperThums.controller.control = swiper; */
 const swiper = new Swiper(".swiper_main", {
   //effect: "fade",
   loop: true,
@@ -12,15 +23,6 @@ const swiper = new Swiper(".swiper_main", {
     swiper: swiperThums,
   },
 });
-const swiperThums = new Swiper(".swiper_thums", {
-  loop: true,
-  spaceBetween: 10,
-  slidesPerView: 4,
-  freeMode: true,
-  watchSlidesProgress: true,
-});
-/* swiper.controller.control = swiperThums;
-swiperThums.controller.control = swiper; */
 
 //menuMouseEvent
 const visual = document.querySelector(".visual");
@@ -109,7 +111,115 @@ const startBtn = document.querySelector(".test_start");
 const question01 = document.querySelector(".question1");
 const question02 = document.querySelector(".question2");
 const question03 = document.querySelector(".question3");
-const next = document.querySelectorAll(".question p");
+const answer01 = document.querySelectorAll(".question1 p");
+const answer02 = document.querySelectorAll(".question2 p");
+const answer03 = document.querySelectorAll(".question3 p");
+const resultPage = document.querySelector(".result");
+
+const incense = document.querySelector(".incense");
+const resultImg = document.querySelectorAll(".result_img img");
+const resultP = document.querySelectorAll(".result_img p");
+const resultSpan = document.querySelectorAll(".result_img span");
+let score = 0;
+
+startBtn.addEventListener("click", function () {
+  start.style.display = "none";
+  question01.style.display = "block";
+});
+/* for (let i = 0; i < answer01.length; i++) {
+  answer01[i].addEventListener("click", function () {
+    if (answer01[i] == answer01[0]) {
+      score += 1;
+    } else if (answer01[i] == answer01[1]) {
+      score += 2;
+    }
+    question01.style.display = "none";
+    question02.style.display = "block";
+  });
+}
+for (let i = 0; i < answer02.length; i++) {
+  answer02[i].addEventListener("click", function () {
+    if (answer02[i] == answer02[0]) {
+      score += 1;
+    } else if (answer02[i] == answer02[1]) {
+      score += 2;
+    }
+    question02.style.display = "none";
+    question03.style.display = "block";
+  });
+}
+for (let i = 0; i < answer03.length; i++) {
+  answer03[i].addEventListener("click", function () {
+    if (answer03[i] == answer03[0]) {
+      score += 1;
+    } else if (answer01[i] == answer01[1]) {
+      score += 2;
+    }
+    question03.style.display = "none";
+    resultPage.style.display = "block";
+    console.log(score);
+  });
+} */
+for (let i = 0; i < 2; i++) {
+  answer01[i].addEventListener("click", function () {
+    if (answer01[i] == answer01[0]) {
+      score += 1;
+    } else if (answer01[i] == answer01[1]) {
+      score += 2;
+    }
+    question01.style.display = "none";
+    question02.style.display = "block";
+  });
+  answer02[i].addEventListener("click", function () {
+    if (answer02[i] == answer02[0]) {
+      score += 1;
+    } else if (answer02[i] == answer02[1]) {
+      score += 2;
+    }
+    question02.style.display = "none";
+    question03.style.display = "block";
+  });
+  answer03[i].addEventListener("click", function () {
+    if (answer03[i] == answer03[0]) {
+      score += 1;
+    } else if (answer01[i] == answer01[1]) {
+      score += 2;
+    }
+    question03.style.display = "none";
+    resultPage.style.display = "block";
+    console.log(score);
+    //연습 결과 더 많이 째기
+    if (score == 3 || score == 4) {
+      incense.textContent = "우드세이지";
+      //
+      resultP[0].textContent = "Wood Sage & Sea Salt";
+      resultP[1].textContent = "Wood Sage & Sea Salt";
+      resultP[2].textContent = "Wood Sage & Sea Salt";
+      //
+      resultSpan[0].textContent = "우드 세이지 앤 씨 쏠트";
+      resultSpan[1].textContent = "우드 세이지 앤 씨 쏠트 미스트";
+      resultSpan[2].textContent = "우드 세이지 앤 씨 쏠트 바디워시";
+      //
+      resultImg[0].src = "./images/sub_bestseller/subBest_item01.png";
+      resultImg[1].src = "./images/sub_bestseller/subBest_item02.png";
+      resultImg[2].src = "./images/sub_bestseller/subBest_item03.png";
+    } else if (score == 5 || score == 6) {
+      incense.textContent = "라임바질";
+      //
+      resultP[0].textContent = "Lime Basil & Mandarin";
+      resultP[1].textContent = "Lime Basil & Mandarin";
+      resultP[2].textContent = "Lime Basil & Mandarin";
+      //
+      resultSpan[0].textContent = "라임 바질 앤 만다린";
+      resultSpan[1].textContent = "라임 바질 앤 만다린 미스트";
+      resultSpan[2].textContent = "라임 바질 앤 만다린 바디워시";
+      //
+      resultImg[0].src = "./images/sub_bestseller/subBest_item03.png";
+      resultImg[1].src = "./images/sub_bestseller/subBest_item04.png";
+      resultImg[2].src = "./images/sub_bestseller/subBest_item05.png";
+    }
+  });
+}
 
 //
 //sns
@@ -120,9 +230,18 @@ const swiperSns = new Swiper(".sns_swiper", {
   slidesPerView: 5,
   //freeMode: true,
   watchSlidesProgress: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
 
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+});
+
+window.addEventListener("scroll", function () {
+  if (this.scrollY > 122) {
+  }
 });

@@ -131,15 +131,11 @@ var gnb = document.querySelector(".gnb");
 for (var i = 0; i < menu.length; i++) {
   menu[i].addEventListener("mouseout", function () {
     headerOuter.style.height = "auto";
-    //headerOuter.style.borderTop = "1px solid #000";
-    //headerOuter.style.borderBottom = "1px solid #000";
     headerOuter.style.backgroundColor = "";
     logo.style.color = "#000";
     header.style.color = "#000";
     headerOuter.style.transition = "0.3s";
-    //gnb.style = "filter:brightness(1);";
   });
-
   menu[i].addEventListener("mouseover", function () {
     headerOuter.style.height = "180px";
     headerOuter.style.border = "none";
@@ -147,109 +143,185 @@ for (var i = 0; i < menu.length; i++) {
     logo.style.color = "#000";
     header.style.color = "#000";
     headerOuter.style.transition = "0.3s";
-    //gnb.style = "filter:brightness(0);";
   });
 }
 
 //search
-/* const searchBtn = document.querySelector(".gnb .search_btn");
-const search = document.querySelector(".search");
-const searchClose = document.querySelector(".search span");
-
+var searchBtn = document.querySelector(".gnb .search_btn");
+var search = document.querySelector(".search");
+var searchClose = document.querySelector(".search span");
 searchBtn.addEventListener("click", function () {
   search.style.display = "block";
 });
 searchClose.addEventListener("click", function () {
   search.style.display = "none";
-} );*/
-//post html 연결 잘못됨 오류남
+});
 //subList
-var item = [{
-  src: "/images/sub_cologne/sub_item01.png",
+var items = [{
+  src: "./images/sub_cologne/sub_item01.png",
   en: "Blackberry & Bay Cologne",
   ko: "블랙베리 앤 베이 코롱",
-  price: "₩ 218,000"
+  price: 218000,
+  id: 1
 }, {
   src: "./images/sub_cologne/sub_item02.png",
   en: "Lime Basil & Mandarin Cologne",
   ko: "라임 바질 앤 만다린 코롱",
-  price: "₩ 218,000"
+  price: 218000,
+  id: 2
 }, {
   src: "./images/sub_cologne/sub_item03.png",
   en: "Wood Sage & Sea Salt Cologne",
   ko: "우드세이지 앤 씨쏠트 코롱",
-  price: "₩ 218,000"
+  price: 218000,
+  id: 3
 }, {
-  src: "/images/sub_cologne/sub_item04.png",
+  src: "./images/sub_cologne/sub_item04.png",
   en: "Star Magnolia Cologne",
   ko: "스타 매그놀리아 코롱",
-  price: "₩ 225,000"
+  price: 225000,
+  id: 4
 }, {
-  src: "/images/sub_cologne/sub_item05.png",
+  src: "./images/sub_cologne/sub_item05.png",
   en: "Nashi Blossom Cologne",
   ko: "나시 블로썸 코롱",
-  price: "₩ 225,000"
+  price: 225000,
+  id: 5
 }, {
-  src: "/images/sub_cologne/sub_item06.png",
+  src: "./images/sub_cologne/sub_item06.png",
   en: "Waterlily Cologne",
   ko: "워터릴리 코롱",
-  price: "₩ 225,000"
+  price: 225000,
+  id: 6
 }, {
-  src: "/images/sub_cologne/sub_item07.png",
+  src: "./images/sub_cologne/sub_item07.png",
   en: "Special-Edition Red Roses Cologne",
   ko: "스페셜 에디션 레드 로즈 코롱",
-  price: "₩ 160,000"
+  price: 160000,
+  id: 7
 }, {
-  src: "/images/sub_cologne/sub_item08.png",
+  src: "./images/sub_cologne/sub_item08.png",
   en: "Rose Water & Vanilla Cologne",
   ko: "로즈 워터 앤 바닐라 코롱",
-  price: "₩ 116,000"
+  price: 116000,
+  id: 8
 }, {
-  src: "/images/sub_cologne/sub_item09.png",
+  src: "./images/sub_cologne/sub_item09.png",
   en: "Rose Blush Cologne",
   ko: "로즈 블러쉬 코롱",
-  price: "₩ 116,000"
+  price: 116000,
+  id: 9
 }, {
-  src: "/images/sub_cologne/sub_item10.png",
+  src: "./images/sub_cologne/sub_item10.png",
   en: "The Golden & Sweet Duo",
   ko: "더 골든 앤 스윗 듀오",
-  price: "₩ 220,000"
+  price: 220000,
+  id: 10
 }, {
-  src: "/images/sub_cologne/sub_item11.png",
+  src: "./images/sub_cologne/sub_item11.png",
   en: "Spirited & Addictive Duo",
   ko: "스피릿 앤 에딕티드 듀오",
-  price: "₩ 220,000"
+  price: 220000,
+  id: 11
 }, {
-  src: "/images/sub_cologne/sub_item12.png",
+  src: "./images/sub_cologne/sub_item12.png",
   en: "Fruity & Sweet Duo",
   ko: "프루티 앤 스윗 듀오",
-  price: "₩ 220,000"
-}];
+  price: 220000,
+  id: 12
+}
+/*{ src: "/images/sub_cologne/sub_item01.png", en: "Blackberry & Bay Cologne", ko: "블랙베리 앤 베이 코롱", price: 218000, id: 13 },
+{ src: "./images/sub_cologne/sub_item02.png", en: "Lime Basil & Mandarin Cologne", ko: "라임 바질 앤 만다린 코롱", price: 218000, id: 14 },
+{ src: "./images/sub_cologne/sub_item03.png", en: "Wood Sage & Sea Salt Cologne", ko: "우드세이지 앤 씨쏠트 코롱", price: 218000, id: 15 },
+{ src: "/images/sub_cologne/sub_item04.png", en: "Star Magnolia Cologne", ko: "스타 매그놀리아 코롱", price: 225000, id: 16 },
+{ src: "/images/sub_cologne/sub_item05.png", en: "Nashi Blossom Cologne", ko: "나시 블로썸 코롱", price: 225000, id: 17 },
+{ src: "/images/sub_cologne/sub_item06.png", en: "Waterlily Cologne", ko: "워터릴리 코롱", price: 225000, id: 18 },
+{ src: "/images/sub_cologne/sub_item07.png", en: "Special-Edition Red Roses Cologne", ko: "스페셜 에디션 레드 로즈 코롱", price: 160000, id: 19 },
+{ src: "/images/sub_cologne/sub_item08.png", en: "Rose Water & Vanilla Cologne", ko: "로즈 워터 앤 바닐라 코롱", price: 116000, id: 20 },
+{ src: "/images/sub_cologne/sub_item09.png", en: "Rose Blush Cologne", ko: "로즈 블러쉬 코롱", price: 116000, id: 21 },
+{ src: "/images/sub_cologne/sub_item10.png", en: "The Golden & Sweet Duo", ko: "더 골든 앤 스윗 듀오", price: 220000, id: 22 },
+{ src: "/images/sub_cologne/sub_item11.png", en: "Spirited & Addictive Duo", ko: "스피릿 앤 에딕티드 듀오", price: 220000, id: 23 },
+{ src: "/images/sub_cologne/sub_item12.png", en: "Fruity & Sweet Duo", ko: "프루티 앤 스윗 듀오", price: 220000, id: 24 },
+{ src: "/images/sub_cologne/sub_item01.png", en: "Blackberry & Bay Cologne", ko: "블랙베리 앤 베이 코롱", price: 218000, id: 25 },
+{ src: "./images/sub_cologne/sub_item02.png", en: "Lime Basil & Mandarin Cologne", ko: "라임 바질 앤 만다린 코롱", price: 218000, id: 26 },
+{ src: "./images/sub_cologne/sub_item03.png", en: "Wood Sage & Sea Salt Cologne", ko: "우드세이지 앤 씨쏠트 코롱", price: 218000, id: 27 },
+{ src: "/images/sub_cologne/sub_item04.png", en: "Star Magnolia Cologne", ko: "스타 매그놀리아 코롱", price: 225000, id: 4 },
+{ src: "/images/sub_cologne/sub_item05.png", en: "Nashi Blossom Cologne", ko: "나시 블로썸 코롱", price: 225000, id: 28 },
+{ src: "/images/sub_cologne/sub_item06.png", en: "Waterlily Cologne", ko: "워터릴리 코롱", price: 225000, id: 29 },
+{ src: "/images/sub_cologne/sub_item07.png", en: "Special-Edition Red Roses Cologne", ko: "스페셜 에디션 레드 로즈 코롱", price: 160000, id: 30 },
+{ src: "/images/sub_cologne/sub_item08.png", en: "Rose Water & Vanilla Cologne", ko: "로즈 워터 앤 바닐라 코롱", price: 116000, id: 31 },
+{ src: "/images/sub_cologne/sub_item09.png", en: "Rose Blush Cologne", ko: "로즈 블러쉬 코롱", price: 116000, id: 32 },
+{ src: "/images/sub_cologne/sub_item10.png", en: "The Golden & Sweet Duo", ko: "더 골든 앤 스윗 듀오", price: 220000, id: 33 },
+{ src: "/images/sub_cologne/sub_item11.png", en: "Spirited & Addictive Duo", ko: "스피릿 앤 에딕티드 듀오", price: 220000, id: 34 },
+{ src: "/images/sub_cologne/sub_item12.png", en: "Fruity & Sweet Duo", ko: "프루티 앤 스윗 듀오", price: 220000, id: 35 }, */];
+
 var subImg = document.querySelectorAll(".item_list .item .img_box img");
 var subTextEn = document.querySelectorAll(".item_list .item .text .en_title");
 var subTextKo = document.querySelectorAll(".item_list .item .text .ko_title");
 var price = document.querySelectorAll(".item_list .item .text .price");
 var select = document.getElementById("sort");
-console.log(select);
-/* console.log(subImg);
-console.log(subTextEn);
-console.log(subTextKo);
-console.log(price); */
-
-for (var _i = 0; _i < item.length; _i++) {
-  subImg[_i].src = item[_i].src;
-  subTextEn[_i].textContent = item[_i].en;
-  subTextKo[_i].textContent = item[_i].ko;
-  price[_i].textContent = item[_i].price;
+/* const formattedNumber = items.price.toLocaleString(); */
+function itemShow(array) {
+  for (var _i = 0; _i < array.length; _i++) {
+    subImg[_i].src = array[_i].src;
+    subTextEn[_i].textContent = array[_i].en;
+    subTextKo[_i].textContent = array[_i].ko;
+    price[_i].textContent = array[_i].price;
+  }
 }
-console.log(select.value);
-select.addEventListener("change", function () {
-  if (select.value == "pop") {
-    item.sort(function (a, b) {
-      return a.price - b.price;
-    });
+items.forEach(function (item) {
+  var price = item.price;
+  var formattedPrice = price.toLocaleString();
+  item.price = formattedPrice;
+}); //for문 안에서 해야 댐
+itemShow(items);
+var order = items.slice().sort(function (a, b) {
+  return a.id - b.id;
+});
+var priceHigh = items.slice().sort(function (a, b) {
+  if (a.price > b.price) {
+    return -1;
+  } else if (a.price < b.price) {
+    return 1;
+  } else if (a.price == b.price) {
+    return 0;
   }
 });
+var priceLow = items.slice().sort(function (a, b) {
+  if (a.price > b.price) {
+    return 1;
+  } else if (a.price < b.price) {
+    return -1;
+  } else if (a.price == b.price) {
+    return 0;
+  }
+});
+select.addEventListener("change", function () {
+  if (select.value == "new") {
+    order;
+    itemShow(order);
+  } else if (select.value == "price_low") {
+    priceLow;
+    itemShow(priceLow);
+  } else if (select.value == "price_high") {
+    priceHigh;
+    itemShow(priceHigh);
+  }
+});
+var preview = document.querySelectorAll(".item_list .item .text .preview");
+var itemBox = document.querySelectorAll(".item_list .item");
+console.log(preview);
+var _loop = function _loop(_i2) {
+  preview[_i2].addEventListener("mouseover", function () {
+    itemBox[_i2].style.border = "1px solid #eee";
+  });
+  preview[_i2].addEventListener("mouseout", function () {
+    itemBox[_i2].style.border = "";
+  });
+};
+for (var _i2 = 0; _i2 < preview.length; _i2++) {
+  _loop(_i2);
+}
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -275,7 +347,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49908" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57403" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
