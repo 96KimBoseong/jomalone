@@ -117,11 +117,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"css/main.scss":[function(require,module,exports) {
+})({"css/detail.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\font\\KOTRA_GOTHIC.woff":[["KOTRA_GOTHIC.14b9dfcf.woff","font/KOTRA_GOTHIC.woff"],"font/KOTRA_GOTHIC.woff"],"./..\\font\\부크크명조_굵은글씨.woff":[["부크크명조_굵은글씨.824431d1.woff","font/부크크명조_굵은글씨.woff"],"font/부크크명조_굵은글씨.woff"],"./..\\font\\부크크명조_얇은글씨.woff":[["부크크명조_얇은글씨.bd29bac9.woff","font/부크크명조_얇은글씨.woff"],"font/부크크명조_얇은글씨.woff"],"./..\\images\\main\\swap-right_2.png":[["swap-right_2.de165a5a.png","images/main/swap-right_2.png"],"images/main/swap-right_2.png"],"./..\\images\\main\\swap-left_2.png":[["swap-left_2.abbd79f6.png","images/main/swap-left_2.png"],"images/main/swap-left_2.png"],"./..\\images\\main\\test_bg.jpg":[["test_bg.97dd44b5.jpg","images/main/test_bg.jpg"],"images/main/test_bg.jpg"],"./..\\images\\main\\tab_date_bg.jpg":[["tab_date_bg.2ee8b04e.jpg","images/main/tab_date_bg.jpg"],"images/main/tab_date_bg.jpg"],"./..\\images\\main\\tab_rain_bg.jpg":[["tab_rain_bg.f3634c7d.jpg","images/main/tab_rain_bg.jpg"],"images/main/tab_rain_bg.jpg"],"./..\\images\\main\\tab_business_bg.jpg":[["tab_business_bg.3ad327d7.jpg","images/main/tab_business_bg.jpg"],"images/main/tab_business_bg.jpg"],"./..\\images\\main\\tab_anniversary_bg.jpg":[["tab_anniversary_bg.fca116cb.jpg","images/main/tab_anniversary_bg.jpg"],"images/main/tab_anniversary_bg.jpg"],"./..\\images\\main\\tab_christmas_bg.jpg":[["tab_christmas_bg.01d896f0.jpg","images/main/tab_christmas_bg.jpg"],"images/main/tab_christmas_bg.jpg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./..\\font\\KOTRA_GOTHIC.woff":[["KOTRA_GOTHIC.14b9dfcf.woff","font/KOTRA_GOTHIC.woff"],"font/KOTRA_GOTHIC.woff"],"./..\\font\\부크크명조_굵은글씨.woff":[["부크크명조_굵은글씨.824431d1.woff","font/부크크명조_굵은글씨.woff"],"font/부크크명조_굵은글씨.woff"],"./..\\font\\부크크명조_얇은글씨.woff":[["부크크명조_얇은글씨.bd29bac9.woff","font/부크크명조_얇은글씨.woff"],"font/부크크명조_얇은글씨.woff"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -403,4 +403,4 @@ module.exports = function loadJSBundle(bundle) {
 },{}],0:[function(require,module,exports) {
 var b=require("node_modules/parcel-bundler/src/builtins/bundle-loader.js");b.register("js",require("node_modules/parcel-bundler/src/builtins/loaders/browser/js-loader.js"));b.load([]);
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js",0], null)
-//# sourceMappingURL=/main.54166fbf.js.map
+//# sourceMappingURL=/detail.f874a451.js.map
