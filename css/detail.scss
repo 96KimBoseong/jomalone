@@ -329,7 +329,7 @@ h3 {
       }
     }
     .footer_right {
-      margin-right: 250px;
+      margin-right: 150px;
       .logo_box {
         margin-top: 30px;
         @include size(140px, 70px);
@@ -377,6 +377,7 @@ h3 {
   }
   .item_box {
     display: flex;
+    background-color: #fff;
     .left_box {
       @include size(750px, 650px);
       .detail_swiper2 {
@@ -403,7 +404,64 @@ h3 {
       margin: 0 auto;
       .text {
         text-align: center;
+        .item_en01 {
+          @include en;
+          margin-top: 180px;
+        }
+        .item_en02 {
+          @include en;
+          margin-top: 35px;
+        }
+        .item_ko {
+          margin-top: 15px;
+          @include ko;
+        }
+        .item_price {
+          margin: 35px 0;
+        }
+        .item_info {
+          @include ko;
+          span {
+            display: block;
+            margin-bottom: 10px;
+          }
+        }
       }
+      select {
+        @include size(440px, 40px);
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      .btn_box {
+        @include size(440px, 40px);
+        display: flex;
+        text-align: center;
+        @include en;
+        margin: 0 auto;
+        line-height: 40px;
+        .add_goods {
+          margin-right: 20px;
+          border: 1px solid #000;
+          background-color: #fff;
+          @include size(210px, 45px);
+          box-sizing: border-box;
+          cursor: pointer;
+        }
+        .buy_now {
+          border: 1px solid #fff;
+          background-color: #000;
+          @include size(210px, 45px);
+          box-sizing: border-box;
+          cursor: pointer;
+          color: #fff;
+        }
+      }
+      /*  .btn_box > div:hover {
+        background-color: #000;
+        color: #fff;
+      } */
     }
   }
 }
