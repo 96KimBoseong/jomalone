@@ -63,7 +63,14 @@ $border: (0.3px solid #000);
   text-align: center;
   line-height: $height;
 }
+/* $max-width: 0;
+$col: 90px;
+$mar: 20px;
 
+@function columns($colNum: 0, $marNum: 0) {
+  @return $max-width = (($col * $colNum)+ ($mar * $marNum));
+}
+ */
 body {
   background-color: $main;
   position: relative;
@@ -133,6 +140,7 @@ h3 {
   /* position: sticky;
       top: 0; */
   background-color: #fcf9ee;
+  z-index: 9999;
 }
 .header {
   @include size(1300px, 80px);
@@ -368,7 +376,7 @@ h3 {
 //detail
 
 .detail {
-  @include size(1300px, 650px);
+  @include size(1300px, auto);
   margin: 0 auto;
   margin-bottom: 100px;
   margin-top: 120px;
@@ -378,6 +386,7 @@ h3 {
   .item_box {
     display: flex;
     background-color: #fff;
+    margin-bottom: 40px;
     .left_box {
       @include size(750px, 650px);
       .detail_swiper2 {
@@ -462,6 +471,86 @@ h3 {
         background-color: #000;
         color: #fff;
       } */
+    }
+  }
+  .accordion {
+    @include size(1080px, auto);
+    margin: 0 auto;
+
+    ul {
+      li {
+        position: relative;
+
+        border-top: 3px solid #444;
+        margin-bottom: 200px;
+        .tab_tit {
+          @include ko;
+          margin: 40px 0;
+          margin-left: 35px;
+        }
+
+        .toggle {
+          font-size: 50px;
+          position: absolute;
+          right: 15px;
+          top: 25px;
+          cursor: pointer;
+        }
+      }
+      .accordion_tab01 {
+        @include ko;
+        .note_box {
+          display: flex;
+          // justify-content: space-between;
+          .note {
+            @include size(340px, 360px);
+            margin-right: 30px;
+            .note_img {
+              @include size(100%, 100%);
+              background-color: #fff;
+              margin-bottom: 5px;
+              img {
+                @include size(100%, 100%);
+              }
+            }
+            .note_tit {
+              @include size(340px, 50px);
+              line-height: 50px;
+              text-align: center;
+              background-color: #fff;
+              margin-bottom: 5px;
+            }
+            .note_txt {
+              @include size(340px, 100px);
+              text-align: center;
+              background-color: #fff;
+              box-sizing: border-box;
+              font-size: 12px;
+              line-height: 23px;
+            }
+          }
+        }
+      }
+      .accordion_tab02 {
+        @include ko;
+      }
+      .accordion_tab03 {
+        .review_top {
+          display: flex;
+        }
+        .side_box {
+          @include size(90px, auto);
+        }
+        .review_swiper {
+          @include size(970px, auto);
+          .swiper-wrapper {
+            @include size(100%, 100%);
+            .swiper-slide {
+              @include size(186px, 186px);
+            }
+          }
+        }
+      }
     }
   }
 }

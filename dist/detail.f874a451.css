@@ -38,6 +38,14 @@ img {
   font-weight: 400;
   font-style: normal;
 }
+/* $max-width: 0;
+$col: 90px;
+$mar: 20px;
+
+@function columns($colNum: 0, $marNum: 0) {
+  @return $max-width = (($col * $colNum)+ ($mar * $marNum));
+}
+ */
 body {
   background-color: #fcf9ee;
   position: relative;
@@ -113,6 +121,7 @@ h3 {
   /* position: sticky;
       top: 0; */
   background-color: #fcf9ee;
+  z-index: 9999;
 }
 
 .header {
@@ -349,7 +358,7 @@ h3 {
 
 .detail {
   width: 1300px;
-  height: 650px;
+  height: auto;
   margin: 0 auto;
   margin-bottom: 100px;
   margin-top: 120px;
@@ -360,6 +369,7 @@ h3 {
 .detail .item_box {
   display: flex;
   background-color: #fff;
+  margin-bottom: 40px;
 }
 .detail .item_box .left_box {
   width: 750px;
@@ -461,6 +471,94 @@ h3 {
   box-sizing: border-box;
   cursor: pointer;
   color: #fff;
+}
+.detail .accordion {
+  width: 1080px;
+  height: auto;
+  margin: 0 auto;
+}
+.detail .accordion ul li {
+  position: relative;
+  border-top: 3px solid #444;
+  margin-bottom: 200px;
+}
+.detail .accordion ul li .tab_tit {
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-style: normal;
+  margin: 40px 0;
+  margin-left: 35px;
+}
+.detail .accordion ul li .toggle {
+  font-size: 50px;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  cursor: pointer;
+}
+.detail .accordion ul .accordion_tab01 {
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-style: normal;
+}
+.detail .accordion ul .accordion_tab01 .note_box {
+  display: flex;
+}
+.detail .accordion ul .accordion_tab01 .note_box .note {
+  width: 340px;
+  height: 360px;
+  margin-right: 30px;
+}
+.detail .accordion ul .accordion_tab01 .note_box .note .note_img {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+.detail .accordion ul .accordion_tab01 .note_box .note .note_img img {
+  width: 100%;
+  height: 100%;
+}
+.detail .accordion ul .accordion_tab01 .note_box .note .note_tit {
+  width: 340px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+.detail .accordion ul .accordion_tab01 .note_box .note .note_txt {
+  width: 340px;
+  height: 100px;
+  text-align: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 23px;
+}
+.detail .accordion ul .accordion_tab02 {
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-style: normal;
+}
+.detail .accordion ul .accordion_tab03 .review_top {
+  display: flex;
+}
+.detail .accordion ul .accordion_tab03 .side_box {
+  width: 90px;
+  height: auto;
+}
+.detail .accordion ul .accordion_tab03 .review_swiper {
+  width: 970px;
+  height: auto;
+}
+.detail .accordion ul .accordion_tab03 .review_swiper .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.detail .accordion ul .accordion_tab03 .review_swiper .swiper-wrapper .swiper-slide {
+  width: 186px;
+  height: 186px;
 }
 
 /*# sourceMappingURL=/detail.f874a451.css.map */

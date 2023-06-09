@@ -61,3 +61,17 @@ const detailSwiper2 = new Swiper(".detail_swiper2", {
     swiper: detailSwiper2,
   },
 });
+//review
+const reviewSwiper = new Swiper(".review_swiper", {
+  loop: true,
+  freeMode: true,
+  spaceBetween: 10,
+  slidesPerView: 5,
+  watchSlidesProgress: true,
+  loopAdditionalSlides: 1,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
