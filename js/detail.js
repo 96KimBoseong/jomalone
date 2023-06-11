@@ -75,3 +75,36 @@ const reviewSwiper = new Swiper(".review_swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+//accordion
+const accordionBtn = document.querySelectorAll(".toggle");
+console.log(accordionBtn);
+
+const accordion = document.querySelectorAll(".accordion_view");
+console.log(accordion);
+const accordionMargin = document.querySelectorAll(".accordion ul li");
+console.log(accordionMargin);
+
+for (let i = 0; i < accordionBtn.length; i++) {
+  accordionBtn[i].addEventListener("click", function () {
+    accordion[i].classList.toggle("toggle_active");
+    accordionMargin[i].classList.toggle("toggle_margin");
+  });
+}
+//sns
+const swiperSns = new Swiper(".sns_swiper", {
+  loop: true,
+  spaceBetween: 15,
+  slidesPerView: 5,
+  //freeMode: true,
+  watchSlidesProgress: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

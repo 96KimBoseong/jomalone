@@ -480,9 +480,8 @@ h3 {
     ul {
       li {
         position: relative;
-
         border-top: 3px solid #444;
-        margin-bottom: 200px;
+        //margin-bottom: 80px;
         .tab_tit {
           @include ko;
           margin: 40px 0;
@@ -496,17 +495,30 @@ h3 {
           top: 25px;
           cursor: pointer;
         }
+
+        .accordion_view {
+          overflow: hidden;
+          height: 0;
+          transition: 0.3s;
+        }
+        .toggle_active {
+          height: auto !important ;
+        }
       }
+      .toggle_margin {
+        margin-bottom: 80px;
+      }
+
       .accordion_tab01 {
         @include ko;
         .note_box {
           display: flex;
           // justify-content: space-between;
           .note {
-            @include size(340px, 360px);
+            @include size(340px, auto);
             margin-right: 30px;
             .note_img {
-              @include size(100%, 100%);
+              @include size(100%, 364px);
               background-color: #fff;
               margin-bottom: 5px;
               img {
@@ -535,11 +547,27 @@ h3 {
         @include ko;
       }
       .accordion_tab03 {
+        @include ko;
+
         .review_top {
           display: flex;
+          margin-bottom: 20px;
         }
         .side_box {
           @include size(90px, auto);
+          text-align: center;
+          .scope {
+            background-color: #fff;
+            height: 120px;
+            margin-bottom: 10px;
+            padding-top: 30px;
+            box-sizing: border-box;
+          }
+          .write {
+            background-color: #fff;
+            height: 56px;
+            line-height: 56px;
+          }
         }
         .review_swiper {
           @include size(970px, auto);
@@ -550,7 +578,147 @@ h3 {
             }
           }
         }
+        .review_bottom {
+          display: flex;
+        }
+        .review_bottom > div {
+          @include size(200px, auto);
+          margin-right: 20px;
+          background-color: #eee;
+          border: 1px solid #eee;
+          box-sizing: border-box;
+          text-align: center;
+          .content_scope {
+            background-color: #fff;
+            margin-bottom: 1px;
+            padding: 20px 0;
+          }
+          p {
+            background-color: #fff;
+            margin-bottom: 1px;
+            padding: 10px 0;
+          }
+        }
+        .review_bottom > div:last-child {
+          margin-right: 0;
+        }
+      }
+      .accordion_tab04 {
+        @include ko;
       }
     }
   }
+  .recommend {
+    @include size(1080px, auto);
+    margin: 0 auto;
+    border-top: 3px solid #444;
+    .recommend_tit {
+      @include ko;
+      margin: 40px 0;
+      margin-left: 35px;
+    }
+    .recommend_outer {
+      display: flex;
+    }
+    .recommend_item {
+      background-color: #fff;
+      text-align: center;
+      margin-right: 20px;
+      cursor: pointer;
+      .recommend_img {
+        margin-bottom: 30px;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+      .recommend_en {
+        @include en;
+      }
+      .recommend_ko {
+        @include ko;
+      }
+      .recommend_price {
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+    .recommend_item:last-child {
+      margin-right: 0;
+    }
+  }
+}
+//sns
+.sns {
+  position: relative;
+  width: 1300px;
+  height: 300px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+  overflow: hidden;
+}
+.sns .swiper {
+  position: absolute;
+  left: -100px;
+  top: 0;
+  width: 1500px;
+}
+.sns .swiper .swiper-wrapper .swiper-slide {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.sns .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+.sns .swiper .swiper-wrapper .swiper-slide p {
+  height: 70px;
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 5px 0;
+  transition: 0.5s;
+  border-radius: 20px 20px 0 0;
+}
+.sns .swiper .swiper-wrapper .swiper-slide .add_cart {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: 8px;
+  top: 8px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 3px;
+  box-sizing: border-box;
+}
+.sns .swiper .swiper-wrapper .swiper-slide .add_cart img {
+  width: 100%;
+  height: 100%;
+}
+.sns .swiper .swiper-wrapper .swiper-slide:hover p {
+  bottom: 0;
+}
+.sns .swiper .swiper-button-prev,
+.sns .swiper .swiper-button-next {
+  background-color: #fff;
+  opacity: 0.7;
+  color: black;
+  width: 90px;
+}
+.sns .swiper .swiper-button-prev {
+  position: absolute;
+  left: 100px;
+  top: 22px;
+  height: 100%;
+}
+.sns .swiper .swiper-button-next {
+  position: absolute;
+  right: 100px;
+  top: 22px;
+  height: 100%;
 }
