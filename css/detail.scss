@@ -397,6 +397,10 @@ h3 {
             margin: 0 auto;
           }
         }
+        .swiper-button-prev,
+        .swiper-button-next {
+          color: #000;
+        }
       }
       .detail_swiper {
         @include size(100%, 170px);
@@ -406,8 +410,17 @@ h3 {
             margin: 0 auto;
           }
         }
+        .swiper-slide {
+          width: 25%;
+          height: 100%;
+          opacity: 0.4;
+        }
+        .swiper-slide-thumb-active {
+          opacity: 1;
+        }
       }
     }
+
     .right_box {
       @include size(550px, 650px);
       margin: 0 auto;

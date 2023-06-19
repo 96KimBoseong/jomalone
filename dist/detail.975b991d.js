@@ -175,7 +175,7 @@ var detailSwiper2 = new Swiper(".detail_swiper2", {
     prevEl: ".swiper-button-prev"
   },
   thumbs: {
-    swiper: detailSwiper2
+    swiper: detailSwiper
   }
 });
 //review
@@ -249,7 +249,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55452" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49883" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

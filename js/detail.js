@@ -58,7 +58,7 @@ const detailSwiper2 = new Swiper(".detail_swiper2", {
     prevEl: ".swiper-button-prev",
   },
   thumbs: {
-    swiper: detailSwiper2,
+    swiper: detailSwiper,
   },
 });
 //review

@@ -384,6 +384,10 @@ h3 {
   height: 450px;
   margin: 0 auto;
 }
+.detail .item_box .left_box .detail_swiper2 .swiper-button-prev,
+.detail .item_box .left_box .detail_swiper2 .swiper-button-next {
+  color: #000;
+}
 .detail .item_box .left_box .detail_swiper {
   width: 100%;
   height: 170px;
@@ -392,6 +396,14 @@ h3 {
   width: 130px;
   height: 130px;
   margin: 0 auto;
+}
+.detail .item_box .left_box .detail_swiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.detail .item_box .left_box .detail_swiper .swiper-slide-thumb-active {
+  opacity: 1;
 }
 .detail .item_box .right_box {
   width: 550px;
