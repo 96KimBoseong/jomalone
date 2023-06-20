@@ -176,7 +176,7 @@
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 9999px;
         background-color: rgba(0, 0, 0, 0.8);
         display: none;
       }
@@ -188,7 +188,7 @@
         text-align: center;
         position: absolute;
         border-radius: 5px;
-        top: 50%;
+        top: 5%;
         left: 50%;
         margin-left: -150px;
         margin-top: -150px;
@@ -252,6 +252,8 @@
         const telErr = document.getElementById("tel_err");
         const emailErr = document.getElementById("email_err");
 
+        // popup
+        const popUp = document.querySelector(".pop_up_outer");
         //state
         let idState = false;
         let pwState = false;
@@ -360,10 +362,15 @@
           }
 
           if (idState == true && pwState == true && nameState == true && dateState == true && telState == true && emailState == true && termsState == true) {
-            const popUp = document.querySelector(".pop_up_outer");
             popUp.style.display = "block";
           } else {
-            alert("불가능");
+            popUp.style.display = "block";
+            const txt01 = document.querySelector(".pop_up .pop_txt01");
+            const txt02 = document.querySelector(".pop_up .pop_txt02");
+            const link = document.querySelector(".pop_up a");
+            txt01.textContent = "회원가입이 불가합니다";
+            txt02.textContent = "정보를 다시 입력해주세요";
+            link.setAttribute.src = "./join.html";
           }
         });
       });
@@ -603,8 +610,8 @@ SMS, DM, 이메일 등 전자적 전송 매체를 통한 개인 맞춤형 광고
     </div>
     <div class="pop_up_outer">
       <div class="pop_up">
-        <p>회원가입이 완료되었습니다</p>
-        <p>로그인 페이지로 이동합니다</p>
+        <p class="pop_txt01">회원가입이 완료되었습니다</p>
+        <p class="pop_txt02">로그인 페이지로 이동합니다</p>
         <a href="./login.html">확인</a>
       </div>
     </div>
