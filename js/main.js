@@ -7,8 +7,7 @@ const swiperThums = new Swiper(".swiper_thums", {
   freeMode: true,
   watchSlidesProgress: true,
 });
-/* swiper.controller.control = swiperThums;
-swiperThums.controller.control = swiper; */
+
 const swiper = new Swiper(".swiper_main", {
   //effect: "fade",
   loop: true,

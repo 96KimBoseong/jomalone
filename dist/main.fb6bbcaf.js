@@ -19380,8 +19380,6 @@ var swiperThums = new Swiper(".swiper_thums", {
   freeMode: true,
   watchSlidesProgress: true
 });
-/* swiper.controller.control = swiperThums;
-swiperThums.controller.control = swiper; */
 var swiper = new Swiper(".swiper_main", {
   //effect: "fade",
   loop: true,
@@ -19637,7 +19635,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53213" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51923" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
