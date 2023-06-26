@@ -201,6 +201,7 @@ h3 {
       width: 80%;
       margin: 30px auto;
       background-color: #fcf9ee;
+      padding: 5px;
     }
     input:focus {
       outline: none;
@@ -374,6 +375,7 @@ h3 {
   h3 {
     margin-bottom: 10px;
     margin-left: 10px;
+    font-size: 30px;
   }
   .new_inner {
     display: flex;
@@ -453,6 +455,8 @@ h3 {
   margin-bottom: 100px;
   h3 {
     margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
   }
   .collection_inner {
     @include size(100%, 100%);
@@ -537,12 +541,15 @@ h3 {
   @include en();
   margin: 0 auto;
   margin-bottom: 100px;
-  box-sizing: border-box;
+  //box-sizing: border-box;
+  //position: relative;
   img {
     height: 100%;
   }
   h3 {
     margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
   }
   .best_inner {
     display: flex;
@@ -565,11 +572,17 @@ h3 {
       line-height: 30px;
     }
     .best_box2 > div:hover img {
-      scale: 1.07;
-      transition: 0.4s;
+      scale: 1.02;
+      transition: 0.3s;
     }
     .best_box2 > div:hover .text {
       display: none;
+    }
+    .best_box2 .text > span {
+      @include en;
+    }
+    .best_box2 .text {
+      @include ko;
     }
     .best_box2 > div:hover .preview_btn {
       display: block;
@@ -588,6 +601,65 @@ h3 {
       display: none;
     }
   }
+  .best_modal_outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include size(9999px, 9999px);
+    background-color: rgba(0, 0, 0, 0.1);
+    .best_modal {
+      position: absolute;
+      background-color: #fff;
+      top: 2846px;
+      left: 210px;
+      z-index: 9999;
+      @include size(1300px, 600px);
+      display: flex;
+      .modal_img {
+        @include size(50%, 100%);
+      }
+      .modal_txt {
+        text-align: center;
+        padding-top: 50px;
+        @include size(50%, 100%);
+        p {
+        }
+        .best_add {
+          margin: 0 auto;
+          width: 70%;
+          background-color: #000;
+          color: #fff;
+          margin-bottom: 5px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .best_link {
+          margin: 0 auto;
+          width: 70%;
+          background-color: #000;
+          color: #fff;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .best_tit_en {
+          @include en;
+          margin-bottom: 10px;
+        }
+        .best_tit_ko {
+          @include ko;
+          margin-bottom: 10px;
+        }
+        .best_info {
+          @include ko;
+          margin-bottom: 10px;
+        }
+        .best_price {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
 }
 //best
 
@@ -603,7 +675,7 @@ h3 {
 
   .start {
     position: relative;
-    padding-top: 80px;
+    padding-top: 180px;
     h3 {
       font-size: 40px;
       color: #fff;
@@ -622,7 +694,7 @@ h3 {
 
   //q
   .question {
-    padding-top: 45px;
+    padding-top: 55px;
 
     h3 {
       @include ko;
@@ -801,8 +873,9 @@ h3 {
     justify-content: center;
     h3 {
       position: absolute;
-      left: 40%;
-      top: 15%;
+      left: 34%;
+      top: 12%;
+      font-size: 28px;
     }
   }
   .sheet_inner > div {
@@ -834,7 +907,7 @@ h3 {
     transition: 0.3s;
   }
   .sheet div:hover > img {
-    scale: 1.04;
+    scale: 1.03;
   }
 }
 /* #tab01:checked ~ .sheet02,
@@ -1034,5 +1107,23 @@ h3 {
         overflow: hidden;
       }
     }
+  }
+}
+
+//top
+
+.top {
+  position: absolute;
+  right: 100px;
+  bottom: 20px;
+  @include size(45px, 45px);
+  border: 0.3px solid #000;
+  text-align: center;
+  background-color: $main;
+  padding-top: 15px;
+  box-sizing: border-box;
+  img {
+    @include size(60%, 60%);
+    margin: 0 auto;
   }
 }

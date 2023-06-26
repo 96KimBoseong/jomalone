@@ -84,6 +84,7 @@ h3 {
   width: 80%;
   margin: 30px auto;
   background-color: #fcf9ee;
+  padding: 5px;
 }
 .search input:focus {
   outline: none;

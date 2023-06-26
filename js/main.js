@@ -240,7 +240,9 @@ const swiperSns = new Swiper(".sns_swiper", {
   },
 });
 
-window.addEventListener("scroll", function () {
-  if (this.scrollY > 122) {
-  }
+//스크롤
+/* window.addEventListener("scroll", function () {
+  console.log("스크롤중");
+  console.log(window.scrollY);
 });
+ */

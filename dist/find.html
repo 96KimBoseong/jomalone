@@ -1,1 +1,176 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>아이디 비밀번호 찾기</title><style>*{margin:0;padding:0}a{display:inline-block;text-decoration:none;color:#000}body{background-color:#fcf9ee}h3{text-align:center;padding:30px 0}.container{width:70%;margin:0 auto}.container input{display:block;width:300px;height:30px;margin:0 auto 10px;box-sizing:border-box}.container form button{border:none;background-color:#000;color:#fff;width:300px;height:30px;display:block;margin:0 auto;cursor:pointer}.container form button:hover{background-color:#999}.link{width:300px;margin:0 auto}.link a{font-size:12px}.link a:first-child{position:relative;margin-right:5px}.alert{position:absolute;top:0;left:0;width:100vw;height:100vh;background-color:rgba(0,0,0,.5);display:none}.alert_inner{position:absolute;top:50%;left:50%;width:300px;height:300px;margin-left:-150px;margin-top:-150px;background-color:#fcf9ee}.alert_inner p{text-align:center;font-size:20px;font-weight:700;margin-top:30px}.alert_inner a{text-align:center;color:#fff;background-color:#000;width:200px;height:40px;line-height:40px;position:absolute;left:50%;bottom:10px;margin-left:-100px}</style><script>document.addEventListener("DOMContentLoaded",function(){var e=[{id:"green",password:1234,name:"김보성",num:"01038498934"},{id:"green2",password:5678,name:"홍길동",num:"01038498934"}],t=document.getElementById("user_name"),n=document.getElementById("user_num"),d=document.getElementById("find_btn"),o=document.querySelector(".alert"),r=document.querySelector(".alert .alert_inner p "),a=document.getElementById("link");d.addEventListener("click",function(){for(var d=0;d<e.length;d++){var l=e[d].id,u=e[d].password,m=e[d].name,c=e[d].num;if(t.value==m&&n.value==c)return r.textContent="유저아이디:".concat(l,"\n                        \n                        유저패스워드:").concat(u),o.style.display="block",void a.setAttribute("href","./login.html");r.textContent="사용자 정보가 틀립니다.",o.style.display="block"}})});</script></head><body> <h3>아이디 비밀번호 찾기</h3> <div class="container"> <form action="" name="find"> <input type="text" id="user_name" class="user_name" name="user_name" autofocus placeholder="이름" required> <input type=" text" id="user_num" class="user_num" name="user_num" placeholder="전화번호"> <button type="button" id="find_btn">아이디 /비밀번호 찾기</button> </form> <div class="link"> <a href="login.html">로그인 페이지로 가기</a> </div> </div> <div class="alert"> <div class="alert_inner"> <p></p> <br> <a href="find.html" id="link">확인</a> </div> </div> </body></html>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 비밀번호 찾기</title>
+    <style>* {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+      }
+
+      body {
+        background-color: #fcf9ee;
+      }
+
+      h3 {
+        text-align: center;
+        padding: 30px 0;
+      }
+
+      .container {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      .container input {
+        display: block;
+        width: 300px;
+        height: 30px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      .container form button {
+        border: none;
+        background-color: #000;
+        color: #fff;
+        width: 300px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+
+      .container form button:hover {
+        background-color: #999;
+      }
+
+      .link {
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      .link a {
+        font-size: 12px;
+      }
+
+      .link a:first-child {
+        position: relative;
+        margin-right: 5px;
+      }
+
+      /* .link a:first-child::after {
+        content: "|";
+        position: absolute;
+        right: -7px;
+        top: -2px;
+      } */
+      .alert {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+      }
+
+      .alert_inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        margin-left: -150px;
+        margin-top: -150px;
+        background-color: #fcf9ee;
+      }
+
+      .alert_inner p {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 30px;
+      }
+
+      .alert_inner a {
+        text-align: center;
+        color: #fff;
+        background-color: #000;
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        margin-left: -100px;
+      }</style>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+  var loginInfo = [{
+    id: "green",
+    password: 1234,
+    name: "김보성",
+    num: "01038498934"
+  }, {
+    id: "green2",
+    password: 5678,
+    name: "홍길동",
+    num: "01038498934"
+  }];
+  var userName = document.getElementById("user_name");
+  var userNum = document.getElementById("user_num");
+  var findBtn = document.getElementById("find_btn");
+  var popUp = document.querySelector(".alert");
+  var popText = document.querySelector(".alert .alert_inner p ");
+  var link = document.getElementById("link");
+  findBtn.addEventListener("click", function () {
+    for (var i = 0; i < loginInfo.length; i++) {
+      var loginInfoId = loginInfo[i].id;
+      var loginInfoPw = loginInfo[i].password;
+      var loginInfoName = loginInfo[i].name;
+      var loginInfoNum = loginInfo[i].num;
+      if (userName.value == loginInfoName && userNum.value == loginInfoNum) {
+        popText.textContent = "\uC720\uC800\uC544\uC774\uB514:".concat(loginInfoId, "\n                        \n                        \uC720\uC800\uD328\uC2A4\uC6CC\uB4DC:").concat(loginInfoPw);
+        popUp.style.display = "block";
+        link.setAttribute("href", "./login.html");
+        return;
+      } else {
+        popText.textContent = "\uC0AC\uC6A9\uC790 \uC815\uBCF4\uAC00 \uD2C0\uB9BD\uB2C8\uB2E4.";
+        popUp.style.display = "block";
+        //link.setAttribute('href','./find.html')
+      }
+    }
+  });
+});</script>
+  </head>
+
+  <body>
+    <h3>아이디 비밀번호 찾기</h3>
+    <div class="container">
+      <form action="" name="find">
+        <input type="text" id="user_name" class="user_name" name="user_name" autofocus="" placeholder="이름" required="">
+        <input type=" text" id="user_num" class="user_num" name="user_num" placeholder="전화번호">
+        <button type="button" id="find_btn">아이디 /비밀번호 찾기</button>
+      </form>
+      <div class="link">
+        <a href="/login.html">로그인 페이지로 가기</a>
+      </div>
+    </div>
+    <div class="alert">
+      <div class="alert_inner">
+        <p></p>
+        <br>
+        <a href="/find.html" id="link">확인</a>
+      </div>
+    </div>
+  </body>
+</html>
