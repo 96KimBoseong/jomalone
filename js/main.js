@@ -246,3 +246,28 @@ const swiperSns = new Swiper(".sns_swiper", {
   console.log(window.scrollY);
 });
  */
+
+//best
+
+const bestPreview = document.querySelectorAll('.preview_btn')
+const bestModal = document.querySelector('.best_modal_outer')
+const bestDelete = document.querySelector('.best_modal .delete')
+
+const bestImg = document.querySelector('.modal_img img')
+const bestTxt = document.querySelectorAll('.modal_txt')
+
+
+
+for(let i = 1; i <bestPreview.length; i++){
+  bestPreview[i].addEventListener("click",()=>{
+    bestModal.style.display = "block"
+    bestImg.src = `./images/main/best_0${i}.png`
+  })
+}
+
+
+
+
+bestDelete.addEventListener('click',()=>{
+  bestModal.style.display = 'none'
+})

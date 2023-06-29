@@ -542,7 +542,7 @@ h3 {
   margin: 0 auto;
   margin-bottom: 100px;
   //box-sizing: border-box;
-  //position: relative;
+  position: relative;
   img {
     height: 100%;
   }
@@ -602,31 +602,39 @@ h3 {
     }
   }
   .best_modal_outer {
-    position: absolute;
+    /* position: fixed;
     top: 0;
     left: 0;
     @include size(9999px, 9999px);
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1); */
+    display: none;
     .best_modal {
       position: absolute;
       background-color: #fff;
-      top: 2846px;
-      left: 210px;
+      top: 0;
+      left: 0;
       z-index: 9999;
-      @include size(1300px, 600px);
+      @include size(1300px, 700px);
       display: flex;
       .modal_img {
         @include size(50%, 100%);
+        border: 0.1px solid #000;
+        box-sizing: border-box;
+        img{
+          height: auto;
+        }
       }
       .modal_txt {
         text-align: center;
-        padding-top: 50px;
+        padding-top: 170px;
         @include size(50%, 100%);
         p {
         }
         .best_add {
           margin: 0 auto;
           width: 70%;
+          height: 30px;
+          line-height: 30px;
           background-color: #000;
           color: #fff;
           margin-bottom: 5px;
@@ -636,6 +644,8 @@ h3 {
         .best_link {
           margin: 0 auto;
           width: 70%;
+          height: 30px;
+          line-height: 30px;
           background-color: #000;
           color: #fff;
           border-radius: 5px;
@@ -657,6 +667,14 @@ h3 {
           font-weight: bold;
           margin-bottom: 10px;
         }
+      }
+      .delete{
+        position: absolute;
+        font-size: 30px;
+        top: 0px;
+        right: 10px;
+        font-family: sans-serif;
+        cursor: pointer;
       }
     }
   }
@@ -1122,6 +1140,7 @@ h3 {
   background-color: $main;
   padding-top: 15px;
   box-sizing: border-box;
+  z-index: 9998;
   img {
     @include size(60%, 60%);
     margin: 0 auto;

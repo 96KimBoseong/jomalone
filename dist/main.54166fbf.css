@@ -528,6 +528,7 @@ h3 {
   font-style: normal;
   margin: 0 auto;
   margin-bottom: 100px;
+  position: relative;
 }
 .best img {
   height: 100%;
@@ -599,36 +600,43 @@ h3 {
   display: none;
 }
 .best .best_modal_outer {
-  position: absolute;
+  /* position: fixed;
   top: 0;
   left: 0;
-  width: 9999px;
-  height: 9999px;
-  background-color: rgba(0, 0, 0, 0.1);
+  @include size(9999px, 9999px);
+  background-color: rgba(0, 0, 0, 0.1); */
+  display: none;
 }
 .best .best_modal_outer .best_modal {
   position: absolute;
   background-color: #fff;
-  top: 2846px;
-  left: 210px;
+  top: 0;
+  left: 0;
   z-index: 9999;
   width: 1300px;
-  height: 600px;
+  height: 700px;
   display: flex;
 }
 .best .best_modal_outer .best_modal .modal_img {
   width: 50%;
   height: 100%;
+  border: 0.1px solid #000;
+  box-sizing: border-box;
+}
+.best .best_modal_outer .best_modal .modal_img img {
+  height: auto;
 }
 .best .best_modal_outer .best_modal .modal_txt {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 170px;
   width: 50%;
   height: 100%;
 }
 .best .best_modal_outer .best_modal .modal_txt .best_add {
   margin: 0 auto;
   width: 70%;
+  height: 30px;
+  line-height: 30px;
   background-color: #000;
   color: #fff;
   margin-bottom: 5px;
@@ -638,6 +646,8 @@ h3 {
 .best .best_modal_outer .best_modal .modal_txt .best_link {
   margin: 0 auto;
   width: 70%;
+  height: 30px;
+  line-height: 30px;
   background-color: #000;
   color: #fff;
   border-radius: 5px;
@@ -664,6 +674,14 @@ h3 {
 .best .best_modal_outer .best_modal .modal_txt .best_price {
   font-weight: bold;
   margin-bottom: 10px;
+}
+.best .best_modal_outer .best_modal .delete {
+  position: absolute;
+  font-size: 30px;
+  top: 0px;
+  right: 10px;
+  font-family: sans-serif;
+  cursor: pointer;
 }
 
 .test {
@@ -1142,6 +1160,7 @@ h3 {
   background-color: #fcf9ee;
   padding-top: 15px;
   box-sizing: border-box;
+  z-index: 9998;
 }
 .top img {
   width: 60%;
