@@ -599,12 +599,11 @@ h3 {
   font-style: normal;
   display: none;
 }
+.best .best_inner .preview_btn:hover {
+  background-color: #fff;
+  color: #000;
+}
 .best .best_modal_outer {
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  @include size(9999px, 9999px);
-  background-color: rgba(0, 0, 0, 0.1); */
   display: none;
 }
 .best .best_modal_outer .best_modal {
@@ -628,7 +627,8 @@ h3 {
 }
 .best .best_modal_outer .best_modal .modal_txt {
   text-align: center;
-  padding-top: 170px;
+  padding: 170px 30px 0;
+  box-sizing: border-box;
   width: 50%;
   height: 100%;
 }
@@ -641,7 +641,18 @@ h3 {
   color: #fff;
   margin-bottom: 5px;
   border-radius: 5px;
+  transition: 0.3s;
   cursor: pointer;
+}
+.best .best_modal_outer .best_modal .modal_txt .best_add:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+.best .best_modal_outer .best_modal .modal_txt .best_link:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
 }
 .best .best_modal_outer .best_modal .modal_txt .best_link {
   margin: 0 auto;
@@ -651,6 +662,7 @@ h3 {
   background-color: #000;
   color: #fff;
   border-radius: 5px;
+  transition: 0.3s;
   cursor: pointer;
 }
 .best .best_modal_outer .best_modal .modal_txt .best_tit_en {
@@ -664,6 +676,11 @@ h3 {
   font-weight: normal;
   font-style: normal;
   margin-bottom: 10px;
+}
+.best .best_modal_outer .best_modal .modal_txt .best_ev {
+  font-family: "KOTRA_GOTHIC";
+  font-weight: normal;
+  font-style: normal;
 }
 .best .best_modal_outer .best_modal .modal_txt .best_info {
   font-family: "KOTRA_GOTHIC";
@@ -812,6 +829,24 @@ h3 {
 }
 .result .result_img3 {
   margin-right: 0;
+}
+.result a {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-sizing: border-box;
+  font-family: "Bookk Myungjo";
+  font-weight: 400;
+  font-style: normal;
+  transition: 0.2s;
+}
+.result a:hover {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
 }
 
 .result_flex > div {
@@ -1065,6 +1100,30 @@ h3 {
   right: 100px;
   top: 22px;
   height: 100%;
+}
+
+.sns_modal_outer {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+.sns_modal_outer .sns_modal {
+  width: 830px;
+  height: 700px;
+  background-color: #fff;
+  display: flex;
+}
+.sns_modal_outer .sns_modal .left_box {
+  width: 50%;
+  height: 50%;
+}
+.sns_modal_outer .sns_modal .left_box .img_box {
+  width: 100%;
+}
+.sns_modal_outer .sns_modal .right_box {
+  width: 50%;
 }
 
 .footer {

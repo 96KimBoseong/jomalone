@@ -600,13 +600,13 @@ h3 {
       @include ko();
       display: none;
     }
+    .preview_btn:hover{
+      background-color: #fff;
+      color:#000;
+      //border: 1px solid #000;
+    }
   }
   .best_modal_outer {
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    @include size(9999px, 9999px);
-    background-color: rgba(0, 0, 0, 0.1); */
     display: none;
     .best_modal {
       position: absolute;
@@ -626,7 +626,8 @@ h3 {
       }
       .modal_txt {
         text-align: center;
-        padding-top: 170px;
+        padding: 170px 30px 0 ;
+        box-sizing: border-box;
         @include size(50%, 100%);
         p {
         }
@@ -639,7 +640,19 @@ h3 {
           color: #fff;
           margin-bottom: 5px;
           border-radius: 5px;
+          transition: 0.3s;
           cursor: pointer;
+        }
+        .best_add:hover{
+          background-color:#fff;
+          color:#000;
+          border: 1px solid #000;
+        }
+        .best_link:hover{
+          background-color: #fff;
+          color:#000;
+          border: 1px solid #000;
+
         }
         .best_link {
           margin: 0 auto;
@@ -649,6 +662,7 @@ h3 {
           background-color: #000;
           color: #fff;
           border-radius: 5px;
+          transition: 0.3s;
           cursor: pointer;
         }
         .best_tit_en {
@@ -658,6 +672,9 @@ h3 {
         .best_tit_ko {
           @include ko;
           margin-bottom: 10px;
+        }
+        .best_ev{
+          @include ko;
         }
         .best_info {
           @include ko;
@@ -801,6 +818,22 @@ h3 {
 
   .result_img3 {
     margin-right: 0;
+  }
+  a{
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-sizing: border-box;
+    @include en;
+    transition: 0.2s;
+  }
+  a:hover{
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
   }
 }
 .result_flex > div {
@@ -1038,6 +1071,32 @@ h3 {
       right: 100px;
       top: 22px;
       height: 100%;
+    }
+  }
+ 
+}
+.sns_modal_outer{
+  position:  fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  .sns_modal{
+    @include size(830px , 700px);
+    background-color: #fff;
+    display: flex;
+    .left_box{
+      @include size(50%,50%);
+      .img_box{
+        width: 100%;
+        img{
+
+
+        }
+      }
+    }
+    .right_box{
+      width: 50%;
     }
   }
 }
