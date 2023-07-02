@@ -583,6 +583,7 @@ h3 {
             background-color: #fff;
             height: 56px;
             line-height: 56px;
+            cursor: pointer;
           }
         }
         .review_swiper {
@@ -741,4 +742,61 @@ h3 {
   right: 100px;
   top: 22px;
   height: 100%;
+}
+
+//review_pop_up
+.review_pop_up{
+  @include size(1300px,900px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: $main;
+  z-index: 9999;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  overflow: hidden;
+  padding-bottom: 20px;
+  h3{
+    @include ko;
+    text-align: center;
+    
+  }
+  input{
+    text-align: center;
+    display: block;
+  }
+  .file{
+   /*  border: none;
+    background-color: #fff; */
+  }
+  .img_box{
+    width: 90%;
+    height: 500px;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  #file-upload-button{
+    border: none;
+    background-color: #fff;
+  }
+  textarea{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    border: none;
+    margin-bottom: 20px;
+  }
+  .review_submit{
+    background-color: #ccc;
+    border-radius: 12px;
+    width: 30%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+  }
 }

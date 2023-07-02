@@ -78,12 +78,9 @@ const reviewSwiper = new Swiper(".review_swiper", {
 
 //accordion
 const accordionBtn = document.querySelectorAll(".toggle");
-console.log(accordionBtn);
 
 const accordion = document.querySelectorAll(".accordion_view");
-console.log(accordion);
 const accordionMargin = document.querySelectorAll(".accordion ul li");
-console.log(accordionMargin);
 
 for (let i = 0; i < accordionBtn.length; i++) {
   accordionBtn[i].addEventListener("click", function () {
@@ -108,3 +105,30 @@ const swiperSns = new Swiper(".sns_swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+//select
+
+const price = document.querySelector('.item_price')
+const selectOption = document.getElementById('goods_ml')
+console.log(selectOption.value)
+
+selectOption.addEventListener('change',function(){
+  if(selectOption.value === '30ml'){
+    price.textContent = '₩ 110,000'
+  }else if(selectOption.value == '50ml'){
+    price.textContent = '₩170,000'
+  }else if(selectOption.value == '100ml'){
+    price.textContent = '₩ 218,000'
+  }else if(selectOption.value == ''){
+    price.textContent = '₩ 옵션을 선택해주세요'
+  }
+})
+
+//review
+const reviewImgPre = document.querySelector('.img_box img ')
+const reviewFile = document.getElementById('file')
+
+reviewFile.addEventListener('change',()=>{
+  let reader = fileReader()
+  let fileSrc = reviewFile.src
+  reviewImgPre.src = fileSrc 
+})

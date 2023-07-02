@@ -194,11 +194,8 @@ var reviewSwiper = new Swiper(".review_swiper", {
 
 //accordion
 var accordionBtn = document.querySelectorAll(".toggle");
-console.log(accordionBtn);
 var accordion = document.querySelectorAll(".accordion_view");
-console.log(accordion);
 var accordionMargin = document.querySelectorAll(".accordion ul li");
-console.log(accordionMargin);
 var _loop = function _loop(_i) {
   accordionBtn[_i].addEventListener("click", function () {
     accordion[_i].classList.toggle("toggle_active");
@@ -223,6 +220,31 @@ var swiperSns = new Swiper(".sns_swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
   }
+});
+//select
+
+var price = document.querySelector('.item_price');
+var selectOption = document.getElementById('goods_ml');
+console.log(selectOption.value);
+selectOption.addEventListener('change', function () {
+  if (selectOption.value === '30ml') {
+    price.textContent = '₩ 110,000';
+  } else if (selectOption.value == '50ml') {
+    price.textContent = '₩170,000';
+  } else if (selectOption.value == '100ml') {
+    price.textContent = '₩ 218,000';
+  } else if (selectOption.value == '') {
+    price.textContent = '₩ 옵션을 선택해주세요';
+  }
+});
+
+//review
+var reviewImgPre = document.querySelector('.img_box img ');
+var reviewFile = document.getElementById('file');
+reviewFile.addEventListener('change', function () {
+  var reader = fileReader();
+  var fileSrc = reviewFile.src;
+  reviewImgPre.src = fileSrc;
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -249,7 +271,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53306" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52805" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
