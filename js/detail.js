@@ -122,13 +122,38 @@ selectOption.addEventListener('change',function(){
     price.textContent = '₩ 옵션을 선택해주세요'
   }
 })
+//가격상이표시 
 
 //review
 const reviewImgPre = document.querySelector('.img_box img ')
 const reviewFile = document.getElementById('file')
+const reviewWrite = document.querySelector('.review_top .write')
+const reviewPopUp = document.querySelector('.review_pop_up')
+const outBtn = document.querySelector('.out_btn')
 
+//리뷰작성취소
+outBtn.addEventListener('click',()=>{
+  reviewPopUp.style.display='none'
+})
+//리뷰 작성 하기 버튼 클릭 이벤트 
+
+reviewWrite.addEventListener('click',()=>{
+  reviewPopUp.style.display="block"
+})
+
+//이미지파일 첨부 미리보기 
 reviewFile.addEventListener('change',()=>{
-  let reader = fileReader()
-  let fileSrc = reviewFile.src
-  reviewImgPre.src = fileSrc 
+  const reader = new FileReader()
+  reader.onload = ({target})=>{
+    reviewImgPre.src= target.result;
+  }
+  reader.readAsDataURL(reviewFile.files[0])
+})
+
+
+const reviewBox = document.querySelector('.review_bottom') 
+const reviewSubmit = document.querySelector('.review_submit')
+
+reviewSubmit.addEventListener('click',()=>{
+  reviewBox.appendChild()
 })
