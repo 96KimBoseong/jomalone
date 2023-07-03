@@ -842,6 +842,7 @@ h3 {
   border-radius: 12px;
   overflow: hidden;
   box-sizing: border-box;
+  resize: none;
 }
 .review_pop_up textarea:focus {
   outline: none;
