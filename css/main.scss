@@ -609,10 +609,11 @@ h3 {
   .best_modal_outer {
     display: none;
     .best_modal {
-      position: absolute;
+      position: fixed;
       background-color: #fff;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
       z-index: 9999;
       @include size(1300px, 700px);
       display: flex;

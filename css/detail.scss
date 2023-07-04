@@ -748,7 +748,7 @@ h3 {
 .review_pop_up{
   display: none;
   @include size(860px,700px);
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -762,6 +762,7 @@ h3 {
     text-align: center;
     margin: 30px;
     font-size: 30px;
+    
   }
   input{
     text-align: center;
@@ -772,7 +773,7 @@ h3 {
   }
   .img_box{
     @include size (90%, 100px);
-    background-color: #fff;
+    //background-color: #fff;
     margin: 0 auto;
     margin-bottom: 10px;
     box-sizing: border-box;

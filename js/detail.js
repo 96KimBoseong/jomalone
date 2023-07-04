@@ -131,14 +131,17 @@ const reviewWrite = document.querySelector('.review_top .write')
 const reviewPopUp = document.querySelector('.review_pop_up')
 const outBtn = document.querySelector('.out_btn')
 
+
 //리뷰작성취소
 outBtn.addEventListener('click',()=>{
   reviewPopUp.style.display='none'
+  document.body.style.overflow = 'visible'
 })
 //리뷰 작성 하기 버튼 클릭 이벤트 
 
 reviewWrite.addEventListener('click',()=>{
   reviewPopUp.style.display="block"
+  document.body.style.overflow ='hidden'
 })
 
 //이미지파일 첨부 미리보기 

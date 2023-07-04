@@ -249,11 +249,13 @@ var outBtn = document.querySelector('.out_btn');
 //리뷰작성취소
 outBtn.addEventListener('click', function () {
   reviewPopUp.style.display = 'none';
+  document.body.style.overflow = 'visible';
 });
 //리뷰 작성 하기 버튼 클릭 이벤트 
 
 reviewWrite.addEventListener('click', function () {
   reviewPopUp.style.display = "block";
+  document.body.style.overflow = 'hidden';
 });
 
 //이미지파일 첨부 미리보기 
@@ -295,7 +297,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61642" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59130" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

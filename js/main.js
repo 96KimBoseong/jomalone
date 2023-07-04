@@ -241,6 +241,15 @@ const swiperSns = new Swiper(".sns_swiper", {
   },
 });
 
+
+const snsModal = document.querySelector('.sns_modal_outer')
+const swiperImg = document.querySelectorAll('.sns_img img')
+console.log(swiperImg) 
+
+
+
+//
+
 //스크롤
 /* window.addEventListener("scroll", function () {
   console.log("스크롤중");
@@ -310,9 +319,7 @@ for(let i = 0; i <bestPreview.length; i++){
   })
 }
 
-
-
-
 bestDelete.addEventListener('click',()=>{
   bestModal.style.display = 'none'
 })
+

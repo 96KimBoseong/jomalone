@@ -28325,6 +28325,11 @@ var swiperSns = new Swiper(".sns_swiper", {
     prevEl: ".swiper-button-prev"
   }
 });
+var snsModal = document.querySelector('.sns_modal_outer');
+var swiperImg = document.querySelectorAll('.sns_img img');
+console.log(swiperImg);
+
+//
 
 //스크롤
 /* window.addEventListener("scroll", function () {
@@ -28418,7 +28423,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61642" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59130" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -607,10 +607,11 @@ h3 {
   display: none;
 }
 .best .best_modal_outer .best_modal {
-  position: absolute;
+  position: fixed;
   background-color: #fff;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 9999;
   width: 1300px;
   height: 700px;
