@@ -222,30 +222,6 @@ for (let i = 0; i < 2; i++) {
 }
 
 //
-//sns
-
-const swiperSns = new Swiper(".sns_swiper", {
-  loop: true,
-  spaceBetween: 15,
-  slidesPerView: 5,
-  //freeMode: true,
-  watchSlidesProgress: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: true,
-  },
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-
-const snsModal = document.querySelector('.sns_modal_outer')
-const swiperImg = document.querySelectorAll('.sns_img img')
-console.log(swiperImg) 
-
 
 
 //
@@ -276,6 +252,7 @@ const modalPrice = document.querySelector('.best_price')
 for(let i = 0; i <bestPreview.length; i++){
   bestPreview[i].addEventListener("click",()=>{
     bestModal.style.display = "block"
+    document.body.style.overflow = 'hidden'
     bestImg.src = `./images/main/best_0${i+2}.png`
     switch(i){
       case 0 : 
@@ -321,5 +298,46 @@ for(let i = 0; i <bestPreview.length; i++){
 
 bestDelete.addEventListener('click',()=>{
   bestModal.style.display = 'none'
+  document.body.style.overflow = 'visible'
 })
 
+
+//sns
+
+const swiperSns = new Swiper(".sns_swiper", {
+  loop: true,
+  spaceBetween: 15,
+  slidesPerView: 5,
+  //freeMode: true,
+  watchSlidesProgress: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+
+const snsModal = document.querySelector('.sns_modal_outer')
+const swiperImg = document.querySelectorAll('.sns_img img')
+//const snsModalGoods = document.querySelector('.modal_right .img_box img')
+const snsModalMain = document.querySelector('.modal_left .img_box img')
+
+const snsClose = document.querySelector('.sns_close')
+for(let i = 0 ; i<swiperImg.length;i++){
+  swiperImg[i].addEventListener('click',()=>{
+    snsModal.style.display='block'
+    document.body.style.overflow = 'hidden'
+    snsModalMain.src = swiperImg[i].src 
+  })
+}
+
+snsClose.addEventListener('click',()=>{
+  snsModal.style.display ='none'
+  document.body.style.overflow = 'visible'
+
+})

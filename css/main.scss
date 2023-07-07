@@ -1077,6 +1077,7 @@ h3 {
  
 }
 .sns_modal_outer{
+  display: none;
   position:  fixed;
   left: 50%;
   top: 50%;
@@ -1086,18 +1087,83 @@ h3 {
     @include size(830px , 700px);
     background-color: #fff;
     display: flex;
-    .left_box{
-      @include size(50%,50%);
+    .modal_left{
+      @include size(550px,700px);
       .img_box{
-        width: 100%;
+        @include size(100%,500px);
         img{
-
-
+          @include size(100%,100%);
         }
       }
+      .text_box{
+        @include size(100%,200px);
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+      }
+      .text_box p{
+        margin-bottom: 10px;
+        margin-left: 10px;
+      }
+      .sns_text{
+        margin-bottom: 0;
+
+      }
+      .sns_like{
+      }
     }
-    .right_box{
-      width: 50%;
+    .modal_right{
+      @include size (280px,700px);
+      .img_box{
+        @include size(200px,200px);
+        margin:  0 auto;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        margin-top: 10px;
+        margin-bottom: 100px;
+        img{
+          @include size(100%,100%);
+        }
+      }
+      .sns_add_btn{
+        @include size(200px , 50px);
+        margin: 0 auto;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 10px;
+        border: 0.5px solid #000;
+        cursor: pointer;
+
+
+      }
+      .sns_add_btn:hover{
+        background-color: #000;
+        color: #fff;
+      }
+      .sns_link_btn{
+        margin:  0 auto;
+        @include size(200px,50px);
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+      }
+      .sns_link_btn:hover{
+        background-color: #fff;
+        color: #000;
+        border: 0.5px solid #000;
+        box-sizing: border-box;
+      }
+    }
+    .sns_close{
+      position: absolute;
+      right: 0;
+      top: 0;
+      @include size(20px,20px);
+      font-size: 20px;
+      cursor: pointer;
     }
   }
 }

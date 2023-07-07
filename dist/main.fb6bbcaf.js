@@ -28308,26 +28308,6 @@ for (var _i2 = 0; _i2 < 2; _i2++) {
 }
 
 //
-//sns
-
-var swiperSns = new Swiper(".sns_swiper", {
-  loop: true,
-  spaceBetween: 15,
-  slidesPerView: 5,
-  //freeMode: true,
-  watchSlidesProgress: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: true
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
-});
-var snsModal = document.querySelector('.sns_modal_outer');
-var swiperImg = document.querySelectorAll('.sns_img img');
-console.log(swiperImg);
 
 //
 
@@ -28352,6 +28332,7 @@ var modalPrice = document.querySelector('.best_price');
 var _loop3 = function _loop3(_i3) {
   bestPreview[_i3].addEventListener("click", function () {
     bestModal.style.display = "block";
+    document.body.style.overflow = 'hidden';
     bestImg.src = "./images/main/best_0".concat(_i3 + 2, ".png");
     switch (_i3) {
       case 0:
@@ -28397,6 +28378,44 @@ for (var _i3 = 0; _i3 < bestPreview.length; _i3++) {
 }
 bestDelete.addEventListener('click', function () {
   bestModal.style.display = 'none';
+  document.body.style.overflow = 'visible';
+});
+
+//sns
+
+var swiperSns = new Swiper(".sns_swiper", {
+  loop: true,
+  spaceBetween: 15,
+  slidesPerView: 5,
+  //freeMode: true,
+  watchSlidesProgress: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+});
+var snsModal = document.querySelector('.sns_modal_outer');
+var swiperImg = document.querySelectorAll('.sns_img img');
+//const snsModalGoods = document.querySelector('.modal_right .img_box img')
+var snsModalMain = document.querySelector('.modal_left .img_box img');
+var snsClose = document.querySelector('.sns_close');
+var _loop4 = function _loop4(_i4) {
+  swiperImg[_i4].addEventListener('click', function () {
+    snsModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    snsModalMain.src = swiperImg[_i4].src;
+  });
+};
+for (var _i4 = 0; _i4 < swiperImg.length; _i4++) {
+  _loop4(_i4);
+}
+snsClose.addEventListener('click', function () {
+  snsModal.style.display = 'none';
+  document.body.style.overflow = 'visible';
 });
 },{"babel-types":"node_modules/babel-types/lib/index.js","lodash":"node_modules/lodash/lodash.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -28423,7 +28442,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59130" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54717" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
