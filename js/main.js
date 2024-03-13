@@ -237,7 +237,7 @@ for (let i = 0; i < 2; i++) {
 
 const bestPreview = document.querySelectorAll('.preview_btn')
 const bestModal = document.querySelector('.best_modal_outer')
-const bestDelete = document.querySelector('.best_modal .delete')
+const bestDelete = document.querySelector('.best_modal .delete ')
 
 const bestImg = document.querySelector('.modal_img img')
 const bestTxt = document.querySelectorAll('.modal_txt')
@@ -291,6 +291,17 @@ for(let i = 0; i <bestPreview.length; i++){
           modalInfo.textContent='꽃의 귀족, 작약의 화려함을 담은 향. 화려하게 핀 작약에 더해진 붉은 사과의 향기로운 과즙과 순수한 자스민, 장미 그리고 카네이션, 블러쉬 스웨이드의 부드러운 관능미가 여운을 남깁니다.'
           modalPrice.textContent = '₩ 218,000' 
 
+        //   const getData = async () => {
+        //     try {
+        //         const response = await fetch("<https://jsonplaceholder123.typicode.com/posts>");
+        //         const data = await response.json();
+        //         console.log(data);
+        //     } catch (error) {
+        //         console.log(`error : ${error}`);
+        //     }
+        // };
+        
+        // getData();
     }
     
   })

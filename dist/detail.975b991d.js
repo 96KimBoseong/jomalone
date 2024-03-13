@@ -237,40 +237,14 @@ selectOption.addEventListener('change', function () {
     price.textContent = '₩ 옵션을 선택해주세요';
   }
 });
-//가격상이표시 
 
 //review
 var reviewImgPre = document.querySelector('.img_box img ');
 var reviewFile = document.getElementById('file');
-var reviewWrite = document.querySelector('.review_top .write');
-var reviewPopUp = document.querySelector('.review_pop_up');
-var outBtn = document.querySelector('.out_btn');
-
-//리뷰작성취소
-outBtn.addEventListener('click', function () {
-  reviewPopUp.style.display = 'none';
-  document.body.style.overflow = 'visible';
-});
-//리뷰 작성 하기 버튼 클릭 이벤트 
-
-reviewWrite.addEventListener('click', function () {
-  reviewPopUp.style.display = "block";
-  document.body.style.overflow = 'hidden';
-});
-
-//이미지파일 첨부 미리보기 
 reviewFile.addEventListener('change', function () {
-  var reader = new FileReader();
-  reader.onload = function (_ref) {
-    var target = _ref.target;
-    reviewImgPre.src = target.result;
-  };
-  reader.readAsDataURL(reviewFile.files[0]);
-});
-var reviewBox = document.querySelector('.review_bottom');
-var reviewSubmit = document.querySelector('.review_submit');
-reviewSubmit.addEventListener('click', function () {
-  reviewBox.appendChild();
+  var reader = fileReader();
+  var fileSrc = reviewFile.src;
+  reviewImgPre.src = fileSrc;
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -297,7 +271,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54717" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58294" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
