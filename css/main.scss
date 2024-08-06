@@ -83,7 +83,7 @@ h3 {
     position: absolute;
     width: 100%;
     color: #fff;
-    //animation: rolling 60s infinite both;
+    animation: rolling 60s linear infinite both ;
     line-height: 40px;
     span {
       cursor: pointer;
@@ -1111,6 +1111,10 @@ h3 {
 
       }
       .sns_like{
+        font-weight: bold;
+      }
+      .sns_name{
+        font-weight: bold;
       }
     }
     .modal_right{

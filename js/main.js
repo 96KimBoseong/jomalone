@@ -1,5 +1,4 @@
-const { switchCase } = require("babel-types");
-const { result } = require("lodash");
+
 
 const swiperThums = new Swiper(".swiper_thums", {
   loop: true,
@@ -335,7 +334,6 @@ const swiperSns = new Swiper(".sns_swiper", {
 
 const snsModal = document.querySelector('.sns_modal_outer')
 const swiperImg = document.querySelectorAll('.sns_img img')
-//const snsModalGoods = document.querySelector('.modal_right .img_box img')
 const snsModalMain = document.querySelector('.modal_left .img_box img')
 
 const snsClose = document.querySelector('.sns_close')
