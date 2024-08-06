@@ -25,6 +25,8 @@
         const userId = document.getElementById("user_id");
         const userPw = document.getElementById("user_pw");
         const loginBtn = document.getElementById("login_btn");
+        const okBtn = document.getElementById("alert_ok");
+        console.log(okBtn);
 
         const popUp = document.querySelector('.alert')
         const popText = document.querySelector('.alert .alert_inner p ')
@@ -37,6 +39,7 @@
             if (userId.value == loginInfoId && userPw.value == loginInfoPw) {
               popText.textContent = '로그인 완료'              
               popUp.style.display = 'block'
+              okBtn.href = 'index.html'
               return;
             } else if (userId.value != loginInfoId && userPw.value == loginInfoPw) {
               popText.textContent = '아이디 오류'              
@@ -180,7 +183,7 @@
       <div class="alert_inner">
         <p></p>
         </br>
-        <a href="./login.html">확인</a>
+        <a id="alert_ok" href="./login.html">확인</a>
       </div>
     </div>
   </body>

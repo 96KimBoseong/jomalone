@@ -160,3 +160,24 @@ const reviewSubmit = document.querySelector('.review_submit')
 reviewSubmit.addEventListener('click',()=>{
   reviewBox.appendChild()
 })
+
+
+const snsModal = document.querySelector('.sns_modal_outer')
+const swiperImg = document.querySelectorAll('.sns_img img')
+//const snsModalGoods = document.querySelector('.modal_right .img_box img')
+const snsModalMain = document.querySelector('.modal_left .img_box img')
+
+const snsClose = document.querySelector('.sns_close')
+for(let i = 0 ; i<swiperImg.length;i++){
+  swiperImg[i].addEventListener('click',()=>{
+    snsModal.style.display='block'
+    document.body.style.overflow = 'hidden'
+    snsModalMain.src = swiperImg[i].src 
+  })
+}
+
+snsClose.addEventListener('click',()=>{
+  snsModal.style.display ='none'
+  document.body.style.overflow = 'visible'
+
+})
