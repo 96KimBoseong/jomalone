@@ -1020,6 +1020,9 @@ h3 {
         position: relative;
         margin-right: 15px;
         cursor: pointer;
+        .sns_img{
+          height: 100%;
+        }
         img {
           @include size(100%, 100%);
         }
