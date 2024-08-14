@@ -3,7 +3,7 @@
 
 
 
-# 소개
+# 프로젝트 개요
 
 합리적인 소비를 하기 위해 모인 사람들과 필요한 것을 공동으로 구매할 수 있는 사이트
 
@@ -66,27 +66,21 @@
 
 ![](https://github.com/user-attachments/assets/3a253b12-9d31-460a-81c2-96725f552923)
 
- 
+- 지정된 정보로 로그인
+  - id: green
+  - password: 1234
+  - 이름: 김보성
+  - 전화번호:010-3849-8934
 
-id: green
 
-password: 1234
-
-이름: 김보성
-
-전화번호:010-3849-8934
-
-회원가입시 회원가입정보로 로그인 불가
-
-## detail-page로 가기 → sub 상품리스트 아무거나 클릭
+## detail-page로 가기 → sub 상품리스트 클릭
 
 ![](https://github.com/user-attachments/assets/c88a34f8-ed9b-4afb-8b2a-ee2bd3166c53)
 
-상품미리보기 / 하단 페이지네이션 미구현
+- 상품미리보기 / 하단 페이지네이션 미구현
 
-## detail-page 장바구니담기 / 구매 미구현
+## detail-page
 
 ![](https://github.com/user-attachments/assets/bba332af-187f-4bdc-b9be-45027b3ae686)
-
-
+- 장바구니담기 / 구매 미구현
 
